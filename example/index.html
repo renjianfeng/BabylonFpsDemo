@@ -38,6 +38,7 @@
 </head>
 <body>
 <canvas id="renderCanvas"></canvas>
+<script type="text/javascript" src="./main.js"></script>
 <script type="text/javascript">
     // 从下面的HTML里获取画布元素
     var canvas = document.querySelector("#renderCanvas");
@@ -48,15 +49,15 @@
     // 此处开始定义函数，它在构建完后就被调用
     var createScene = function () {
         // 现在创建一个Babylon场景对象
-        var scene = new BABYLON.Scene(engine);
+        scene = new BABYLON.Scene(engine);
 
         // 改变场景的背景色为绿色.
         scene.clearColor = new BABYLON.Color3(0.2, 0.2, 0.2);
 
-        var mp5 = new BABYLON.Sound("Gunshot", "music/m4a12.wav", scene, null, { playbackRate: 1, volume: 2,loop: false });
-        var hq = new BABYLON.Sound("Gunshot", "music/hq.wav", scene, null, { playbackRate: 1, volume: 2,loop: false });
-        var sq = new BABYLON.Sound("Gunshot", "music/sq.ogg", scene, null, { playbackRate: 1, volume: 2,loop: false });
-        var feng = new BABYLON.Sound("Gunshot", "music/feng.wav", scene, null, { playbackRate: 1, volume: 2,loop: true,autoplay:true });
+        mp5 = new BABYLON.Sound("Gunshot", "music/m4a12.wav", scene, null, { playbackRate: 1, volume: 2,loop: false });
+        hq = new BABYLON.Sound("Gunshot", "music/hq.wav", scene, null, { playbackRate: 1, volume: 2,loop: false });
+        sq = new BABYLON.Sound("Gunshot", "music/sq.ogg", scene, null, { playbackRate: 1, volume: 2,loop: false });
+        feng = new BABYLON.Sound("Gunshot", "music/feng.wav", scene, null, { playbackRate: 1, volume: 2,loop: true,autoplay:true });
 
 
 
@@ -69,6 +70,58 @@
         camera.inertia=0.3;
         camera.speed=10;
         camera.angularSensibility=900;
+        scene.gravity = new BABYLON.Vector3(0, -7, 0);
+
+        // 开启碰撞
+        scene.collisionsEnabled = true;
+
+
+        camera.checkCollisions = true;
+
+        //重力相机。
+        camera.applyGravity = true;
+
+        //摄像机上的椭球属性
+        camera.ellipsoid = new BABYLON.Vector3(2, 6, 2);
+        camera.maxZ=100000
+
+        var light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(-10, -10, 0), scene);
+        light.intensity = 1;
+        light.position=new BABYLON.Vector3(0, 300, 0)
+
+        light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
+        light1.intensity = 0.2;
+
+        shadowGenerator = new BABYLON.ShadowGenerator(2048, light);
+        //  shadowGenerator.frustumEdgeFalloff = 10.0;
+        light.shadowMinZ=0
+        light.shadowMaxZ=300
+        shadowGenerator.useBlurCloseExponentialShadowMap = true;
+        // shadowGenerator.useKernelBlur = true;
+
+        shadowGenerator.blurScale=1
+
+        var pipeline = new BABYLON.StandardRenderingPipeline(
+                "standard", // The name of the pipeline
+                scene, // The scene instance
+                1.0, // The rendering pipeline ratio
+                null, // The original post-process that the pipeline will be based on
+                [camera] // The list of cameras to be attached to
+        );
+        pipeline.brightThreshold = 0.2;
+        pipeline.exposure = 0.12;
+        // Enable Volumetric Lights computation in the pipeline
+        pipeline.VLSEnabled = true;
+
+        //体积灯光效果
+        pipeline.sourceLight =light;
+
+        pipeline.volumetricLightPower = 4;
+
+        pipeline.volumetricLightStepsCount = 50;
+
+
+
 
 
         //m4a1
@@ -143,20 +196,7 @@
 
         //首先要做的是定义我们的重力矢量，定义G力。在一个经典的世界，如地球，重力的方向沿Y轴向下（负），但随时改变它！
 
-        scene.gravity = new BABYLON.Vector3(0, -0.9, 0);
 
-        // 开启碰撞
-        scene.collisionsEnabled = true;
-
-
-        camera.checkCollisions = true;
-
-        //重力相机。
-        camera.applyGravity = true;
-
-        //摄像机上的椭球属性
-        camera.ellipsoid = new BABYLON.Vector3(2, 6, 2);
-        camera.maxZ=100000
 
         //并声明哪些网格可能与我们的相机碰撞：
        // ground.checkCollisions = true;
@@ -168,44 +208,14 @@
         // 将光源光线置为昏暗
         light.intensity = 1;*/
 
-        var light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(-10, -10, 1), scene);
-        light.intensity = 1;
-        light.position=new BABYLON.Vector3(0, 300, 0)
-
-        var light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
-        light1.intensity = 0.2;
-
-        shadowGenerator = new BABYLON.ShadowGenerator(2048, light);
-        shadowGenerator.frustumEdgeFalloff = 10.0;
-        shadowGenerator.usePoissonSampling = true;
-
-        var qiangState=1;
-
-        var freeHuo=new freeHuo(box5)
 
 
-        function lookAt(tM, lAt) {
-            /*
-             * tM = mesh to rotate.
-             * lAt = vector3(xyz) of target position to look at
-             */
-
-            lAt = lAt.subtract(tM.position);
-            tM.rotation.y = -Math.atan2(lAt.z, lAt.x) - Math.PI/2;
-        }
 
 
-        function move(mesh,manSpeed){
+        qiangState=1;
 
-                if (BABYLON.Vector3.Distance(mesh.position,camera.position) > manSpeed*10){
+        var freeHuo=new freeHuoConstructor(box5)
 
-                    mesh.translate(forward,manSpeed,0);
-
-                } else {
-                    manState = 'idle';
-
-                }
-        }
 
         moveSpeed=1;
         freeState=false
@@ -423,12 +433,12 @@
 
 
 
-                    newMeshes4=newMeshes3.clone()
 
+                    newMeshes4=newMeshes3.clone()
                     console.log(newMeshes4)
 
                 })
-
+                console.log(1112)
                 var isLocked = false;
 
                 var ready
@@ -436,66 +446,9 @@
 
                 var ready_2
                 var ready2_2
-                setQiangState()
+                setQiangState(qiangState)
 
-                function keyevent(){
-                    if(event.keyCode==49){
-                        qiangState=1
-                        setQiangState()
-                        setTimeout(function(){
-                            hq.play()
-                        },500)
-                    }else if(event.keyCode==50){
-                        qiangState=2
-                        setQiangState()
-                        setTimeout(function(){
-                            hq.play()
-                        },500)
-                    }else if(event.keyCode==81){
-                        setTimeout(function(){
-                            hq.play()
-                        },500)
-                        if(qiangState==1){
-                            qiangState=2
-                        }else{
-                            qiangState=1
-                        }
-                        setQiangState()
-                    }
-                }
                 document.onkeydown = keyevent;
-
-
-
-                function setQiangState(){
-                    if(qiangState==1){
-
-                        scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9").visibility=0;
-                        scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10").visibility=0;
-
-                        scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed").visibility=1;
-                        scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418").visibility=1;
-
-                        ready = scene.beginAnimation(scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed"), 10, 60, false);
-                        ready2 = scene.beginAnimation(scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418"), 10, 60, false);
-                    }else{
-
-                        scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed").visibility=0;
-                        scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418").visibility=0;
-
-                        scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9").visibility=1;
-                        scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10").visibility=1;
-                        ready_2 = scene.beginAnimation(scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9"), 10, 50, false);
-                        ready2_2 = scene.beginAnimation(scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10"), 10, 50, false);
-
-                    }
-                }
-
-
-
-
-
-
 
                 /*scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9").visibility=0;
                 scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10").visibility=0;*/
@@ -506,13 +459,6 @@
                 var freemusic
                 // On click event, request pointer lock
                 scene.onPointerDown = function (evt) {
-
-
-
-
-
-
-
                     if(qiangState==1){
                         mp5.play()
                         freemusic=setInterval(function(){mp5.stop(); mp5.play()},100)
@@ -520,7 +466,6 @@
                         sq.play()
                         freemusic=setInterval(function(){sq.stop(); sq.play()},200)
                     }
-
 
                     freeState=true;
                     freeHuo.start()
@@ -555,16 +500,12 @@
 
                 scene.onPointerUp = function (evt) {
 
-
                     clearInterval(freemusic)
                   //  gunshot.stop();
 
                     freeState=false;
                     freeHuo.stop()
-                   /* free.stop()
-                    free2.stop()
-                    free_2.stop()
-                    free2_2.stop()*/
+
                     free = scene.beginAnimation(scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed"), 75, 75, false,1.5);
                     free2 = scene.beginAnimation(scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418"), 75, 75, false,1.5);
 
@@ -612,137 +553,19 @@
                 scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10").renderingGroupId=1;
 
 
-
             });
 
         });
 
 
 
-        function freeHuo(mesh){
 
-            // Create a particle system
-            var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
-
-            //Texture of each particle
-            particleSystem.particleTexture = new BABYLON.Texture("../images/boom.png", scene);
-
-            // Where the particles come from
-            particleSystem.emitter = mesh; // the starting object, the emitter
-            particleSystem.maxEmitBox = new BABYLON.Vector3(0, 0, 0); // To...
-
-            // Colors of all particles
-            particleSystem.color1 = new BABYLON.Color4(0.7, 0.8, 1.0, 1.0);
-            particleSystem.color2 = new BABYLON.Color4(0.2, 0.5, 1.0, 1.0);
-            particleSystem.colorDead = new BABYLON.Color4(0, 0, 0.2, 0.0);
-
-            // Size of each particle (random between...
-            particleSystem.minSize =0.5;
-            particleSystem.maxSize = 0.1;
-
-            // Life time of each particle (random between...
-            particleSystem.minLifeTime = 0.000001;
-            particleSystem.maxLifeTime = 0.000001;
-
-            // Emission rate
-            particleSystem.emitRate = 1500;
-
-            // Blend mode : BLENDMODE_ONEONE, or BLENDMODE_STANDARD
-            particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
-
-            // Set the gravity of all particles
-            particleSystem.gravity = new BABYLON.Vector3(0, -9.81, 0);
-
-            // Direction of each particle after it has been emitted
-            particleSystem.direction1 = new BABYLON.Vector3(-1, -1, -1);
-            particleSystem.direction2 = new BABYLON.Vector3(1, 1, 1);
-
-            // Angular speed, in radians
-            particleSystem.minAngularSpeed = 0;
-            particleSystem.maxAngularSpeed = Math.PI;
-
-            // Speed
-            particleSystem.minEmitPower = 1;
-            particleSystem.maxEmitPower = 3;
-            particleSystem.updateSpeed = 0.005;
-
-            // Start the particle system
-            this.start=function(){
-                particleSystem.start();
-            }
-
-            this.stop=function(){
-                particleSystem.stop();
-            }
-
-        }
 
 
         yu1 = BABYLON.Mesh.CreateBox("crate", 2, scene);
         yu1.material = new BABYLON.StandardMaterial("Mat", scene);
         yu1.material.alpha=0;
         yu1.position = new BABYLON.Vector3(0, 280, 0);
-
-        var xiayu=new Yu(yu1)
-        xiayu.start()
-        function Yu(mesh){
-
-            // Create a particle system
-            var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
-
-            //Texture of each particle
-            particleSystem.particleTexture = new BABYLON.Texture("../images/yun.png", scene);
-
-            // Where the particles come from
-            particleSystem.emitter = mesh; // the starting object, the emitter
-            particleSystem.maxEmitBox = new BABYLON.Vector3(100, 100, 100); // To...
-            particleSystem.minEmitBox = new BABYLON.Vector3(-100, -100, -100); // To...
-
-            // Colors of all particles
-            particleSystem.color1 = new BABYLON.Color4(1, 1, 1, 1.0);
-            particleSystem.color2 = new BABYLON.Color4(1,1, 1.0, 1.0);
-            particleSystem.colorDead = new BABYLON.Color4(1, 1, 1, 0.0);
-
-            // Size of each particle (random between...
-            particleSystem.minSize =0.2;
-            particleSystem.maxSize = 2;
-
-            // Life time of each particle (random between...
-            particleSystem.minLifeTime = 0.4;
-            particleSystem.maxLifeTime = 5;
-
-            // Emission rate
-            particleSystem.emitRate = 9500;
-
-            // Blend mode : BLENDMODE_ONEONE, or BLENDMODE_STANDARD
-            particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
-
-            // Set the gravity of all particles
-            particleSystem.gravity = new BABYLON.Vector3(0, -100, 0);
-
-            // Direction of each particle after it has been emitted
-            particleSystem.direction1 = new BABYLON.Vector3(-2, -2, -2);
-            particleSystem.direction2 = new BABYLON.Vector3(2, -2, 2);
-
-            // Angular speed, in radians
-            particleSystem.minAngularSpeed = 0;
-            particleSystem.maxAngularSpeed = Math.PI;
-
-            // Speed
-            particleSystem.minEmitPower = 10;
-            particleSystem.maxEmitPower = 30;
-            particleSystem.updateSpeed = 0.009;
-
-            // Start the particle system
-            this.start=function(){
-                particleSystem.start();
-            }
-
-            this.stop=function(){
-                particleSystem.stop();
-            }
-
-        }
 
 
         var skybox = BABYLON.Mesh.CreateBox("skyBox", 10000.0, scene);
@@ -756,159 +579,20 @@
         skyboxMaterial.disableLighting = true;
         skybox.material = skyboxMaterial;
 
-
-
+        var xiayu=new Yu(yu1)
+        xiayu.start()
 
         var setBoom=new setBooms(new BABYLON.Vector3(-16,0,0))
 
-
-       /* setInterval(function(){
-
-        },1000)*/
-
-
-
-        function setBooms(position){
-            var fountain = BABYLON.Mesh.CreateBox("fountain", 1.0, scene);
-            fountain.isPickable=false
-            fountain.visibility=0;
-            fountain.rotation.x=Math.PI*0.9;
-            var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
-
-            //粒子的纹理
-            particleSystem.particleTexture = new BABYLON.Texture("../images/yun.png", scene);
-
-            //颜色过滤
-          //  particleSystem.textureMask = new BABYLON.Color4(1, 1, 1 ,1.0);
-
-
-            //定义发射器
-            particleSystem.emitter = fountain; // the starting object, the emitter, a box in this case.
-
-            particleSystem.minEmitBox = new BABYLON.Vector3(0, 0, 0); // Starting all From
-
-            particleSystem.color1 = new BABYLON.Color4(.4, .4, .4 ,1.0);
-            particleSystem.color2 = new BABYLON.Color4(.4, .4, .4 ,1.0);
-            particleSystem.colorDead = new BABYLON.Color4(.4, .4, .4 ,0);
-
-            particleSystem.minSize = 1;
-            particleSystem.maxSize = 10;
-
-            // console.log(particleSystem)
-
-            particleSystem.minLifeTime = 6;
-            particleSystem.maxLifeTime = 6;
-
-            particleSystem.emitRate = 5;
-
-            // particleSystem.manualEmitCount = 300;
-
-            particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
-
-
-            particleSystem.direction1 = new BABYLON.Vector3(0, -3, 0);
-            // particleSystem2.direction2 = new BABYLON.Vector3(0, 100, 0);
-
-
-
-            // Speed
-            particleSystem.minEmitPower = 1;
-            particleSystem.maxEmitPower = 1;
-            particleSystem.updateSpeed = 0.1;
-
-
-            particleSystem.stop();
-
-            this.start=function(){
-                particleSystem.start();
-            }
-
-            this.stop=function(){
-                particleSystem.stop();
-            }
-            this.Position=function(position){
-                fountain.position=position;
-            }
-
-            fountain.position=position;
-            // fountain.rotation=rotation;
-        }
-
-
         var Xue=new Xues(new BABYLON.Vector3(-16,0,0))
 
-        function Xues(position){
-            var fountain = BABYLON.Mesh.CreateBox("fountain", 1.0, scene);
-            fountain.isPickable=false
-            fountain.visibility=0;
-            fountain.rotation.x=Math.PI*0.9;
-            var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
-
-            //粒子的纹理
-            particleSystem.particleTexture = new BABYLON.Texture("../images/yun.png", scene);
-
-            //颜色过滤
-            //  particleSystem.textureMask = new BABYLON.Color4(1, 1, 1 ,1.0);
-
-
-            //定义发射器
-            particleSystem.emitter = fountain; // the starting object, the emitter, a box in this case.
-
-            particleSystem.minEmitBox = new BABYLON.Vector3(0, 0, 0); // Starting all From
-
-            particleSystem.color1 = new BABYLON.Color4(.8, 0, 0 ,1.0);
-            particleSystem.color2 = new BABYLON.Color4(.8, 0, 0 ,1.0);
-            particleSystem.colorDead = new BABYLON.Color4(.8, 0, 0 ,0);
-
-            particleSystem.minSize = 1;
-            particleSystem.maxSize = 10;
-
-            // console.log(particleSystem)
-
-            particleSystem.minLifeTime = 6;
-            particleSystem.maxLifeTime = 6;
-
-            particleSystem.emitRate = 5;
-
-            // particleSystem.manualEmitCount = 300;
-
-            particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
-
-
-            particleSystem.direction1 = new BABYLON.Vector3(1, 3, 1);
-            // particleSystem2.direction2 = new BABYLON.Vector3(0, 100, 0);
-
-
-
-            // Speed
-            particleSystem.minEmitPower = 1;
-            particleSystem.maxEmitPower = 1;
-            particleSystem.updateSpeed = 0.1;
-
-
-            particleSystem.stop();
-
-            this.start=function(){
-                particleSystem.start();
-            }
-
-            this.stop=function(){
-                particleSystem.stop();
-            }
-            this.Position=function(position){
-                fountain.position=position;
-            }
-
-            fountain.position=position;
-            // fountain.rotation=rotation;
-        }
 
         // 离开该函数
         return scene;
     }; // End of createScene function
     // -------------------------------------------------------------
     // 现在, 调用刚创建完的createScene函数
-    var scene = createScene();
+    scene = createScene();
     // 注册一个渲染循环已重复的渲染场景
     engine.runRenderLoop(function () {
         scene.render();
@@ -918,5 +602,6 @@
         engine.resize();
     });
 </script>
+
 </body>
 </html>
