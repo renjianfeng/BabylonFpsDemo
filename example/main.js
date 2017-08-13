@@ -75,18 +75,18 @@ function freeHuoConstructor(mesh){
     // Colors of all particles
     particleSystem.color1 = new BABYLON.Color4(0.7, 0.8, 1.0, 1.0);
     particleSystem.color2 = new BABYLON.Color4(0.2, 0.5, 1.0, 1.0);
-    particleSystem.colorDead = new BABYLON.Color4(0, 0, 0.2, 0.0);
+    particleSystem.colorDead = new BABYLON.Color4(0, 0, 0.2, 1);
 
     // Size of each particle (random between...
     particleSystem.minSize =0.5;
-    particleSystem.maxSize = 0.1;
+    particleSystem.maxSize = 0.8;
 
     // Life time of each particle (random between...
     particleSystem.minLifeTime = 0.000001;
     particleSystem.maxLifeTime = 0.000001;
 
     // Emission rate
-    particleSystem.emitRate = 1500;
+    particleSystem.emitRate = 150;
 
     // Blend mode : BLENDMODE_ONEONE, or BLENDMODE_STANDARD
     particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
@@ -95,8 +95,8 @@ function freeHuoConstructor(mesh){
     particleSystem.gravity = new BABYLON.Vector3(0, -9.81, 0);
 
     // Direction of each particle after it has been emitted
-    particleSystem.direction1 = new BABYLON.Vector3(-1, -1, -1);
-    particleSystem.direction2 = new BABYLON.Vector3(1, 1, 1);
+    particleSystem.direction1 = new BABYLON.Vector3(-10, -1, -10);
+    particleSystem.direction2 = new BABYLON.Vector3(10, 1, 10);
 
     // Angular speed, in radians
     particleSystem.minAngularSpeed = 0;
@@ -129,17 +129,17 @@ function Yu(mesh){
 
     // Where the particles come from
     particleSystem.emitter = mesh; // the starting object, the emitter
-    particleSystem.maxEmitBox = new BABYLON.Vector3(100, 100, 100); // To...
-    particleSystem.minEmitBox = new BABYLON.Vector3(-100, -100, -100); // To...
+    particleSystem.maxEmitBox = new BABYLON.Vector3(150, 150, 150); // To...
+    particleSystem.minEmitBox = new BABYLON.Vector3(-150, -150, -150); // To...
 
     // Colors of all particles
-    particleSystem.color1 = new BABYLON.Color4(1, 1, 1, 1.0);
-    particleSystem.color2 = new BABYLON.Color4(1,1, 1.0, 1.0);
+    particleSystem.color1 = new BABYLON.Color4(1, 1, 1, 0.06);
+    particleSystem.color2 = new BABYLON.Color4(1,1, 1.0, 0.06);
     particleSystem.colorDead = new BABYLON.Color4(1, 1, 1, 0.0);
 
     // Size of each particle (random between...
-    particleSystem.minSize =0.2;
-    particleSystem.maxSize = 2;
+    particleSystem.minSize =50;
+    particleSystem.maxSize = 100;
 
     // Life time of each particle (random between...
     particleSystem.minLifeTime = 0.4;

@@ -101,6 +101,27 @@
 
         shadowGenerator.blurScale=1
 
+        var rad1 = BABYLON.Mesh.CreateSphere("sphere", 10.0, 1000.0, scene);
+        // var rad1 = BABYLON.Mesh.CreateSphere("rad1", 8, 16, scene);
+        // var rad1 = BABYLON.Mesh.CreateCylinder("rad1", 10, 5, 5, 8, 8, scene);
+        rad1.visibility = 0.2;
+
+        rad1.material = new BABYLON.StandardMaterial("bmat", scene);
+        rad1.material.diffuseColor = new BABYLON.Color3(0.0, 1.0, 0.0);
+        rad1.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
+        // rad1.material.emissiveColor = new BABYLON.Color3(0.3, 0.1, 0.1);
+        rad1.material.backFaceCulling = false;
+
+      //  rad1.billboardMode = BABYLON.Mesh.BILLBOARDMODE_ALL;
+
+        // rad1.position = new BABYLON.Vector3(10, 5, 0);
+        rad1.position =new BABYLON.Vector3(1000, 400, 0);
+        rad1.rotation = new BABYLON.Vector3(Math.PI, 0, 0);
+
+
+        // 将光源光线置为昏暗
+        var godrays = new BABYLON.VolumetricLightScatteringPostProcess('godrays', 1.0, camera, rad1, 100, BABYLON.Texture.BILINEAR_SAMPLINGMODE, engine, false);
+
         var pipeline = new BABYLON.StandardRenderingPipeline(
                 "standard", // The name of the pipeline
                 scene, // The scene instance
@@ -109,7 +130,7 @@
                 [camera] // The list of cameras to be attached to
         );
         pipeline.brightThreshold = 0.2;
-        pipeline.exposure = 0.12;
+        pipeline.exposure = 0.01;
         // Enable Volumetric Lights computation in the pipeline
         pipeline.VLSEnabled = true;
 
@@ -127,7 +148,7 @@
         //m4a1
         box2 = BABYLON.Mesh.CreateBox("crate", 2, scene);
         box2.material = new BABYLON.StandardMaterial("Mat", scene);
-        box2.material.alpha=1;
+        box2.material.alpha=0;
         box2.position = new BABYLON.Vector3(0, -60, 8);
         box2.parent=camera;
         box2.checkCollisions = false;
@@ -136,11 +157,12 @@
         //手枪
         box3 = BABYLON.Mesh.CreateBox("crate", 2, scene);
         box3.material = new BABYLON.StandardMaterial("Mat", scene);
-        box3.material.alpha=1;
+        box3.material.alpha=0;
         box3.position = new BABYLON.Vector3(5, -61, 6);
         box3.parent=camera;
         box3.checkCollisions = false;
         box3.isPickable=false
+
 
 
         //怪物
@@ -154,6 +176,8 @@
             npc[i].material = new BABYLON.StandardMaterial("Mat", scene);
             npc[i].material.alpha=0;
             npc[i].position = new BABYLON.Vector3(0, 82, 0);
+            npc[i].visibility=0
+          //  scene.removeMesh(npc[i])
             //npc[i].scaling = new BABYLON.Vector3(4, 16, 4);
         }
 
@@ -169,6 +193,9 @@
             npc_a[i].ellipsoidOffset = new BABYLON.Vector3(0, 2, 0);*/
             npc_a[i].applyGravity = true;
             npc_a[i].dieaState=false;
+            npc_a[i].visibility=0
+
+         //   scene.removeMesh(npc_a[i])
         }
 
 
@@ -192,6 +219,11 @@
         box6.scaling= new BABYLON.Vector3(3, 3, 3);
         box6.checkCollisions = false;
         box6.isPickable=false
+
+        scene.removeMesh(box3)
+        scene.removeMesh(box2)
+        scene.removeMesh(box5)
+        scene.removeMesh(box6)
 
 
         //首先要做的是定义我们的重力矢量，定义G力。在一个经典的世界，如地球，重力的方向沿Y轴向下（负），但随时改变它！
@@ -382,6 +414,7 @@
             scene.getMeshByName("Cube (2)").material=qiangMaterial
             scene.getMeshByName("Cube (3)").material=qiangMaterial
             scene.getMeshByName("Cube (4)").material=qiangMaterial
+
 
 
            /* shadowGenerator.getShadowMap().renderList.push(scene.getMeshByName("crate"));
