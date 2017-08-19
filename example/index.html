@@ -85,12 +85,34 @@
         camera.ellipsoid = new BABYLON.Vector3(2, 6, 2);
         camera.maxZ=100000
 
-        var light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(-10, -10, 0), scene);
+        var light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(-20, -10, 0), scene);
         light.intensity = 1;
-        light.position=new BABYLON.Vector3(0, 300, 0)
+        light.position=new BABYLON.Vector3(0, 500, 0)
 
         light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
         light1.intensity = 0.2;
+
+
+        var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(1, 10, 1), scene);
+        light0.diffuse = new BABYLON.Color3(1, 0.5, 0);
+        light0.specular = new BABYLON.Color3(1, 0.5, 0);
+        light0.intensity = 0;
+        light0.range=1200
+        light0.angle = 0;
+        light0.exponent =0;
+
+
+
+
+        shadowGenerator2 = new BABYLON.ShadowGenerator(2048, light0);
+        //  shadowGenerator.frustumEdgeFalloff = 10.0;
+        light0.shadowMinZ=0
+        light0.shadowMaxZ=300
+        shadowGenerator2.useBlurCloseExponentialShadowMap = true;
+        // shadowGenerator.useKernelBlur = true;
+
+        shadowGenerator2.blurScale=1
+
 
         shadowGenerator = new BABYLON.ShadowGenerator(2048, light);
         //  shadowGenerator.frustumEdgeFalloff = 10.0;
@@ -121,7 +143,7 @@
 
         // 将光源光线置为昏暗
         var godrays = new BABYLON.VolumetricLightScatteringPostProcess('godrays', 1.0, camera, rad1, 100, BABYLON.Texture.BILINEAR_SAMPLINGMODE, engine, false);
-
+/*
         var pipeline = new BABYLON.StandardRenderingPipeline(
                 "standard", // The name of the pipeline
                 scene, // The scene instance
@@ -139,7 +161,7 @@
 
         pipeline.volumetricLightPower = 4;
 
-        pipeline.volumetricLightStepsCount = 50;
+        pipeline.volumetricLightStepsCount = 50;*/
 
 
 
@@ -401,6 +423,7 @@
                 mesh.parent=box6
                 mesh.checkCollisions = true
                 shadowGenerator.getShadowMap().renderList.push(mesh);
+                shadowGenerator2.getShadowMap().renderList.push(mesh);
                 mesh.receiveShadows = true;
             })
 
@@ -447,6 +470,7 @@
                             }
 
                             shadowGenerator.getShadowMap().renderList.push(dd[index]);
+                            shadowGenerator2.getShadowMap().renderList.push(dd[index]);
                             dd[index].receiveShadows = true;
 
                             if(index==3||index==2){
@@ -492,12 +516,21 @@
                 var freemusic
                 // On click event, request pointer lock
                 scene.onPointerDown = function (evt) {
+                    light0.intensity=1;
                     if(qiangState==1){
                         mp5.play()
-                        freemusic=setInterval(function(){mp5.stop(); mp5.play()},100)
+                        freemusic=setInterval(function(){mp5.stop();lightFree(); mp5.play()},100)
                     }else{
                         sq.play()
-                        freemusic=setInterval(function(){sq.stop(); sq.play()},200)
+                        freemusic=setInterval(function(){sq.stop(); lightFree(); sq.play()},200)
+                    }
+
+
+                    function lightFree(){
+                        light0.intensity=1;
+                        setTimeout(function(){
+                            light0.intensity=0;
+                        },10)
                     }
 
                     freeState=true;
@@ -533,6 +566,8 @@
 
                 scene.onPointerUp = function (evt) {
 
+                    light0.intensity=0
+
                     clearInterval(freemusic)
                   //  gunshot.stop();
 
@@ -566,6 +601,10 @@
                 //    mesh1.material.backFaceCulling=false;
                     mesh1.isPickable=true;
                     mesh1.parent=box2;
+                    light0.parent=camera;
+                    console.log(light0)
+                    light0.position.y=100
+                    light0.position.z=30
                     console.log(mesh1.id)
                 })
 
@@ -613,7 +652,7 @@
         skybox.material = skyboxMaterial;
 
         var xiayu=new Yu(yu1)
-        xiayu.start()
+       // xiayu.start()
 
         var setBoom=new setBooms(new BABYLON.Vector3(-16,0,0))
 

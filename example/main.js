@@ -133,20 +133,20 @@ function Yu(mesh){
     particleSystem.minEmitBox = new BABYLON.Vector3(-150, -150, -150); // To...
 
     // Colors of all particles
-    particleSystem.color1 = new BABYLON.Color4(1, 1, 1, 0.06);
-    particleSystem.color2 = new BABYLON.Color4(1,1, 1.0, 0.06);
-    particleSystem.colorDead = new BABYLON.Color4(1, 1, 1, 0.0);
+    particleSystem.color1 = new BABYLON.Color4(1, 1, 1, 1);
+    particleSystem.color2 = new BABYLON.Color4(1,1, 1.0, 1);
+    particleSystem.colorDead = new BABYLON.Color4(1, 1, 1, 1);
 
     // Size of each particle (random between...
-    particleSystem.minSize =50;
-    particleSystem.maxSize = 100;
+    particleSystem.minSize =1;
+    particleSystem.maxSize = 4;
 
     // Life time of each particle (random between...
     particleSystem.minLifeTime = 0.4;
     particleSystem.maxLifeTime = 5;
 
     // Emission rate
-    particleSystem.emitRate = 9500;
+    particleSystem.emitRate = 900;
 
     // Blend mode : BLENDMODE_ONEONE, or BLENDMODE_STANDARD
     particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
