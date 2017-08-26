@@ -73,9 +73,9 @@ function freeHuoConstructor(mesh){
     particleSystem.maxEmitBox = new BABYLON.Vector3(0, 0, 0); // To...
 
     // Colors of all particles
-    particleSystem.color1 = new BABYLON.Color4(0.7, 0.8, 1.0, 1.0);
-    particleSystem.color2 = new BABYLON.Color4(0.2, 0.5, 1.0, 1.0);
-    particleSystem.colorDead = new BABYLON.Color4(0, 0, 0.2, 1);
+    particleSystem.color1 = new BABYLON.Color4(0.7, 0.8, 1.0, 0.5);
+    particleSystem.color2 = new BABYLON.Color4(0.2, 0.5, 1.0, 0.5);
+    particleSystem.colorDead = new BABYLON.Color4(0, 0, 0.2, 0);
 
     // Size of each particle (random between...
     particleSystem.minSize =0.5;
@@ -198,9 +198,9 @@ function setBooms(position){
 
     particleSystem.minEmitBox = new BABYLON.Vector3(0, 0, 0); // Starting all From
 
-    particleSystem.color1 = new BABYLON.Color4(.4, .4, .4 ,1.0);
-    particleSystem.color2 = new BABYLON.Color4(.4, .4, .4 ,1.0);
-    particleSystem.colorDead = new BABYLON.Color4(.4, .4, .4 ,0);
+    particleSystem.color1 = new BABYLON.Color4(0.8, 0.8, 0.8, 1);
+    particleSystem.color2 = new BABYLON.Color4(0.8,0.8, 0.8, 1);
+    particleSystem.colorDead = new BABYLON.Color4(0, 0, 0, 0);
 
     particleSystem.minSize = 1;
     particleSystem.maxSize = 10;
@@ -217,7 +217,7 @@ function setBooms(position){
     particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
 
 
-    particleSystem.direction1 = new BABYLON.Vector3(0, -3, 0);
+    particleSystem.direction1 = new BABYLON.Vector3(0, -1, 0);
     // particleSystem2.direction2 = new BABYLON.Vector3(0, 100, 0);
 
 

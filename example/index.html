@@ -67,9 +67,9 @@
         camera.keysDown.push(83);
         camera.keysLeft.push(65);
         camera.keysRight.push(68);
-        camera.inertia=0.3;
+        camera.inertia=0.1;
         camera.speed=10;
-        camera.angularSensibility=900;
+        camera.angularSensibility=500;
         scene.gravity = new BABYLON.Vector3(0, -7, 0);
 
         // 开启碰撞
@@ -83,28 +83,45 @@
 
         //摄像机上的椭球属性
         camera.ellipsoid = new BABYLON.Vector3(2, 6, 2);
-        camera.maxZ=100000
+        camera.maxZ=10000
 
-        var light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(-20, -10, 0), scene);
-        light.intensity = 1;
-        light.position=new BABYLON.Vector3(0, 500, 0)
+        var defaultPipeline = new BABYLON.DefaultRenderingPipeline("default", true, scene, [camera]);
+        defaultPipeline.bloomEnabled = true;
+        defaultPipeline.fxaaEnabled = true;
+        defaultPipeline.bloomWeight = 0.1;
+        defaultPipeline.cameraFov = 0.1;
+
+        /*scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+        scene.fogColor = new BABYLON.Color3(0, 0, 0);
+        scene.fogDensity = 0.003;*/
+
+
+
+
+        var light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(10, -10, -10), scene);
+        light.intensity = 2;
+        light.position=new BABYLON.Vector3(0, 300, 300)
 
         light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
-        light1.intensity = 0.2;
+        light1.intensity = 0.1;
 
 
         var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(1, 10, 1), scene);
         light0.diffuse = new BABYLON.Color3(1, 0.5, 0);
         light0.specular = new BABYLON.Color3(1, 0.5, 0);
         light0.intensity = 0;
-        light0.range=1200
+        light0.range=120
         light0.angle = 0;
         light0.exponent =0;
+        light0.parent=camera;
+        console.log(light0)
+        light0.position.y=10
+        light0.position.z=0
 
 
 
 
-        shadowGenerator2 = new BABYLON.ShadowGenerator(2048, light0);
+        shadowGenerator2 = new BABYLON.ShadowGenerator(512, light0);
         //  shadowGenerator.frustumEdgeFalloff = 10.0;
         light0.shadowMinZ=0
         light0.shadowMaxZ=300
@@ -114,35 +131,19 @@
         shadowGenerator2.blurScale=1
 
 
-        shadowGenerator = new BABYLON.ShadowGenerator(2048, light);
+        shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
         //  shadowGenerator.frustumEdgeFalloff = 10.0;
         light.shadowMinZ=0
-        light.shadowMaxZ=300
+        light.shadowMaxZ=600
         shadowGenerator.useBlurCloseExponentialShadowMap = true;
         // shadowGenerator.useKernelBlur = true;
 
         shadowGenerator.blurScale=1
 
-        var rad1 = BABYLON.Mesh.CreateSphere("sphere", 10.0, 1000.0, scene);
-        // var rad1 = BABYLON.Mesh.CreateSphere("rad1", 8, 16, scene);
-        // var rad1 = BABYLON.Mesh.CreateCylinder("rad1", 10, 5, 5, 8, 8, scene);
-        rad1.visibility = 0.2;
 
-        rad1.material = new BABYLON.StandardMaterial("bmat", scene);
-        rad1.material.diffuseColor = new BABYLON.Color3(0.0, 1.0, 0.0);
-        rad1.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
-        // rad1.material.emissiveColor = new BABYLON.Color3(0.3, 0.1, 0.1);
-        rad1.material.backFaceCulling = false;
-
-      //  rad1.billboardMode = BABYLON.Mesh.BILLBOARDMODE_ALL;
-
-        // rad1.position = new BABYLON.Vector3(10, 5, 0);
-        rad1.position =new BABYLON.Vector3(1000, 400, 0);
-        rad1.rotation = new BABYLON.Vector3(Math.PI, 0, 0);
 
 
         // 将光源光线置为昏暗
-        var godrays = new BABYLON.VolumetricLightScatteringPostProcess('godrays', 1.0, camera, rad1, 100, BABYLON.Texture.BILINEAR_SAMPLINGMODE, engine, false);
 /*
         var pipeline = new BABYLON.StandardRenderingPipeline(
                 "standard", // The name of the pipeline
@@ -279,6 +280,7 @@
         decalMaterial.diffuseTexture = new BABYLON.Texture("../images/impact.png", scene);
         decalMaterial.diffuseTexture.hasAlpha = true;
         decalMaterial.zOffset = -2;
+        decalMaterial.disableLighting=true;
 
 
         scene.registerBeforeRender(function () {
@@ -416,27 +418,84 @@
 
         });
 
-        BABYLON.SceneLoader.ImportMesh("", "../example/model/map1/", "map1.babylon", scene, function(newMeshesmap) {
+
+
+/*
+        qiangMaterial= new BABYLON.StandardMaterial("qiang444",scene)
+        qiangMaterial.diffuseTexture=new BABYLON.Texture("../images/qiang666.jpg", scene);
+        qiangMaterial.diffuseTexture.uScale=0.5
+        qiangMaterial.diffuseTexture.vScale=0.5
+        qiangMaterial.diffuseTexture.coordinatesIndex=0
+        qiangMaterial.specularPower = 10000;
+        qiangMaterial.specularColor= new BABYLON.Color4(0, 0, 0,0)*/
+
+
+
+         BABYLON.SceneLoader.ImportMesh("", "../example/model/map1/", "map20.babylon", scene, function(newMeshesmap) {
+
+            meshmap=newMeshesmap
+
+
+
+            scene.getMeshByName("Plane001").material.diffuseTexture.uScale=20;
+            scene.getMeshByName("Plane001").material.diffuseTexture.vScale=20;
+            /* scene.getMeshByName("TiledBrick021").material.diffuseTexture.vScale=20;
+             scene.getMeshByName("TiledBrick024").material.diffuseTexture.vScale=20;
+             scene.getMeshByName("TiledBrick022").material.diffuseTexture.vScale=20;
+             scene.getMeshByName("TiledBrick023").material.diffuseTexture.vScale=20;*/
+
+
+
+
+
 
             newMeshesmap.forEach(function(mesh,index){
-               /* mesh.position=new BABYLON.Vector3(0, 180, 0);*/
-                mesh.parent=box6
-                mesh.checkCollisions = true
-                shadowGenerator.getShadowMap().renderList.push(mesh);
-                shadowGenerator2.getShadowMap().renderList.push(mesh);
-                mesh.receiveShadows = true;
+               // mesh.position.y+=100;
+               // var _mesh=mesh
+
+                mesh.instances.forEach(function(_mesh){
+                    shadowGenerator.getShadowMap().renderList.push(_mesh);
+                    shadowGenerator2.getShadowMap().renderList.push(_mesh);
+                    _mesh.receiveShadows = true;
+                })
+                /*for (var index = 0; index < 30; index++) {
+                  //  var newInstance = mesh.createInstance("i" + index);
+                    if(_mesh.createInstance()){
+                        _mesh.createInstance().position.y+=100
+                        _mesh= _mesh.createInstance();
+                    }
+                }*/
+
+                if(mesh.name!="Navmesh"){
+                  /* mesh.material=qiangMaterial
+                   mesh.clone().material=qiangMaterial*/
+                   // mesh.parent=box6
+                    box6.scaling=new BABYLON.Vector3(0.3,0.3,0.3)
+                    /*mesh.checkCollisions = true
+                    mesh.clone().checkCollisions = true*/
+                    shadowGenerator.getShadowMap().renderList.push(mesh);
+                    shadowGenerator2.getShadowMap().renderList.push(mesh);
+                    mesh.receiveShadows = true;
+                  //  console.log(mesh.createInstance())
+                   /* if(mesh.material){
+                        mesh.material.diffuseTexture=new BABYLON.Texture("../example/model/map1/WhiteBrick_s.tga", scene);
+                        mesh.material.diffuseTexture.coordinatesIndex=0
+                        mesh.material.diffuseTexture.hasAlpha=false;
+                    }*/
+
+                }else{
+                    mesh.visibility=0;
+                }
+
             })
 
-            var qiangMaterial= new BABYLON.StandardMaterial("qiang",scene)
-            qiangMaterial.diffuseTexture=new BABYLON.Texture("../images/qiang.jpg", scene);
-            qiangMaterial.specularPower = 10000;
-            qiangMaterial.specularColor= new BABYLON.Color4(0, 0, 0,0)
 
-            scene.getMeshByName("Cube").material=qiangMaterial
+
+         /*   scene.getMeshByName("Cube").material=qiangMaterial
             scene.getMeshByName("Cube (1)").material=qiangMaterial
             scene.getMeshByName("Cube (2)").material=qiangMaterial
             scene.getMeshByName("Cube (3)").material=qiangMaterial
-            scene.getMeshByName("Cube (4)").material=qiangMaterial
+            scene.getMeshByName("Cube (4)").material=qiangMaterial*/
 
 
 
@@ -461,6 +520,7 @@
                     var i=0
                     npc.forEach(function(sp){
                         newMeshes3.forEach(function(mesh,index){
+                            mesh.applyFog=true;
                             dd[index]=mesh.clone()
                             dd[index].isPickable=false
                             if(mesh.skeleton!=undefined){
@@ -519,10 +579,11 @@
                     light0.intensity=1;
                     if(qiangState==1){
                         mp5.play()
-                        freemusic=setInterval(function(){mp5.stop();lightFree(); mp5.play()},100)
+                        freemusic=setInterval(function(){mp5.stop();lightFree(); mp5.play()},0)
+                       // mp5.stop();lightFree(); mp5.play()
                     }else{
-                        sq.play()
-                        freemusic=setInterval(function(){sq.stop(); lightFree(); sq.play()},200)
+                        //sq.play()
+                        sq.stop(); lightFree(); sq.play()
                     }
 
 
@@ -535,11 +596,11 @@
 
                     freeState=true;
                     freeHuo.start()
-                    free = scene.beginAnimation(scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed"), 75, 100, true,1.5);
-                    free2 = scene.beginAnimation(scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418"), 75, 100, true,1.5);
+                    free = scene.beginAnimation(scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed"), 75, 85, true,3.5);
+                    free2 = scene.beginAnimation(scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418"), 75, 85, true,3.5);
 
-                    free_2 = scene.beginAnimation(scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9"), 80, 100, true,1);
-                    free2_2 = scene.beginAnimation(scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10"), 80, 100, true,1);
+                    free_2 = scene.beginAnimation(scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9"), 79, 82, false,1.5);
+                    free2_2 = scene.beginAnimation(scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10"), 79, 82, false,1.5);
 
                     free.reset()
                     free2.reset()
@@ -601,10 +662,6 @@
                 //    mesh1.material.backFaceCulling=false;
                     mesh1.isPickable=true;
                     mesh1.parent=box2;
-                    light0.parent=camera;
-                    console.log(light0)
-                    light0.position.y=100
-                    light0.position.z=30
                     console.log(mesh1.id)
                 })
 
