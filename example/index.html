@@ -101,6 +101,7 @@
         var light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(10, -10, -10), scene);
         light.intensity = 2;
         light.position=new BABYLON.Vector3(0, 300, 300)
+      //  light.position=new BABYLON.Vector3(camera.position.x, camera.position.y+200, camera.position.z)
 
         light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
         light1.intensity = 0.1;
@@ -138,7 +139,7 @@
         shadowGenerator.useBlurCloseExponentialShadowMap = true;
         // shadowGenerator.useKernelBlur = true;
 
-        shadowGenerator.blurScale=1
+        shadowGenerator.blurScale=0.5
 
 
 
@@ -289,6 +290,7 @@
                 var pickResult = scene.pick(window.innerWidth/2, window.innerHeight/2);
                 if (pickResult.hit) {
                     console.log(pickResult.pickedMesh.name)
+                   // console.log(pickResult.pickedPoint)
                     if(pickResult.pickedMesh.name=="npc"){
                         pickResult.pickedMesh.dieState=true
                         pickResult.pickedMesh.checkCollisions = false;
@@ -454,9 +456,12 @@
                // var _mesh=mesh
 
                 mesh.instances.forEach(function(_mesh){
-                    shadowGenerator.getShadowMap().renderList.push(_mesh);
-                    shadowGenerator2.getShadowMap().renderList.push(_mesh);
-                    _mesh.receiveShadows = true;
+                    if(mesh.name!="Group01"){
+                        shadowGenerator.getShadowMap().renderList.push(_mesh);
+                        shadowGenerator2.getShadowMap().renderList.push(_mesh);
+                        _mesh.receiveShadows = true;
+                    }
+
                 })
                 /*for (var index = 0; index < 30; index++) {
                   //  var newInstance = mesh.createInstance("i" + index);
