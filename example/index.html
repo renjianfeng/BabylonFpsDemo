@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script></script>
-    <script src="../Babylon/babylon.js"></script>
+    <script src="../Babylon/babylon.3.1.js"></script>
     <!-- <script src="../assets/Babylon.js-master/dist/Oimo.js"></script>  新的物理引擎 -->
 
     <style>
@@ -67,8 +67,8 @@
         camera.keysDown.push(83);
         camera.keysLeft.push(65);
         camera.keysRight.push(68);
-        camera.inertia=0.1;
-        camera.speed=10;
+        camera.inertia=0.2;
+        camera.speed=12;
         camera.angularSensibility=500;
         scene.gravity = new BABYLON.Vector3(0, -7, 0);
 
@@ -85,26 +85,29 @@
         camera.ellipsoid = new BABYLON.Vector3(2, 6, 2);
         camera.maxZ=10000
 
-        var defaultPipeline = new BABYLON.DefaultRenderingPipeline("default", true, scene, [camera]);
+      /*  var defaultPipeline = new BABYLON.DefaultRenderingPipeline("default", true, scene, [camera]);
         defaultPipeline.bloomEnabled = true;
         defaultPipeline.fxaaEnabled = true;
         defaultPipeline.bloomWeight = 0.1;
-        defaultPipeline.cameraFov = 0.1;
+        defaultPipeline.cameraFov = 0.1;*/
 
-        /*scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
-        scene.fogColor = new BABYLON.Color3(0, 0, 0);
-        scene.fogDensity = 0.003;*/
-
-
+        scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+        scene.fogColor = new BABYLON.Color3(1, 1, 1);
+        scene.fogDensity = 0.0005;
 
 
-        var light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(10, -10, -10), scene);
+
+
+        light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(10, -10, -10), scene);
         light.intensity = 2;
         light.position=new BABYLON.Vector3(0, 300, 300)
+        light.autoUpdateExtends=false;
+        light.shadowFrustumSize=1100
       //  light.position=new BABYLON.Vector3(camera.position.x, camera.position.y+200, camera.position.z)
 
         light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
-        light1.intensity = 0.1;
+        light1.intensity = 0.5;
+
 
 
         var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(1, 10, 1), scene);
@@ -122,10 +125,10 @@
 
 
 
-        shadowGenerator2 = new BABYLON.ShadowGenerator(512, light0);
+        shadowGenerator2 = new BABYLON.ShadowGenerator(100, light0);
         //  shadowGenerator.frustumEdgeFalloff = 10.0;
         light0.shadowMinZ=0
-        light0.shadowMaxZ=300
+        light0.shadowMaxZ=10
         shadowGenerator2.useBlurCloseExponentialShadowMap = true;
         // shadowGenerator.useKernelBlur = true;
 
@@ -133,13 +136,43 @@
 
 
         shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
-        //  shadowGenerator.frustumEdgeFalloff = 10.0;
-        light.shadowMinZ=0
-        light.shadowMaxZ=600
+        shadowGenerator.bias = 0.0000001;
+
         shadowGenerator.useBlurCloseExponentialShadowMap = true;
+       // shadowGenerator.forceBackFacesOnly= true;
+        shadowGenerator.depthScale=380
+        shadowGenerator.blurScale=0.6
+        //  shadowGenerator.frustumEdgeFalloff = 10.0;
+        light.shadowMinZ=-100
+        light.shadowMaxZ=500
+      //  shadowGenerator.useBlurCloseExponentialShadowMap = true;
         // shadowGenerator.useKernelBlur = true;
 
-        shadowGenerator.blurScale=0.5
+        //shadowGenerator.blurScale=0.4
+
+
+   /*  var lights=[];
+     var shadowGenerators=[]
+     scene.meshes.forEach(function(mesh,i){
+         lights[i].setEnabled(false);
+         lights[i].excludedMeshes=[mesh]
+         lights[i].setEnabled(true);
+         lights[i] = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(0, 0, 0), scene);
+         lights[i].intensity = 2;
+         lights[i].position=mesh.position
+         lights[i].position.y=mesh.position+100
+         lights[i].shadowMinZ=0
+         lights[i].shadowMaxZ=500
+         shadowGenerators[i] = new BABYLON.ShadowGenerator(1024, light);
+         shadowGenerators[i].useBlurCloseExponentialShadowMap = true;
+         shadowGenerators[i].blurScale=0.4
+
+     })*/
+
+      /*  light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(10, -10, -10), scene);
+        light.intensity = 2;
+        light.position=new BABYLON.Vector3(0, 300, 300)*/
+
 
 
 
@@ -195,7 +228,7 @@
         npc_b=[]
         npc_c=[]
 
-        for(var i=0;i<=12;i++){
+        for(var i=0;i<=2;i++){
             npc[i]= BABYLON.Mesh.CreateBox("crate44", 2, scene);
             npc[i].material = new BABYLON.StandardMaterial("Mat", scene);
             npc[i].material.alpha=0;
@@ -712,6 +745,7 @@
         skyboxMaterial.emissiveColor  = new BABYLON.Color3(0, 0, 0);
         skyboxMaterial.disableLighting = true;
         skybox.material = skyboxMaterial;
+        skybox.applyFog=false;
 
         var xiayu=new Yu(yu1)
        // xiayu.start()
