@@ -71,6 +71,7 @@
         camera.speed=12;
         camera.angularSensibility=500;
         scene.gravity = new BABYLON.Vector3(0, -7, 0);
+        camera.fov=1
 
         // 开启碰撞
         scene.collisionsEnabled = true;
@@ -106,7 +107,7 @@
       //  light.position=new BABYLON.Vector3(camera.position.x, camera.position.y+200, camera.position.z)
 
         light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
-        light1.intensity = 0.5;
+        light1.intensity = 0.3;
 
 
 
@@ -614,7 +615,7 @@
                 var freemusic
                 // On click event, request pointer lock
                 scene.onPointerDown = function (evt) {
-                    light0.intensity=1;
+                    light0.intensity=2;
                     if(qiangState==1){
                         mp5.play()
                         freemusic=setInterval(function(){mp5.stop();lightFree(); mp5.play()},0)
@@ -626,7 +627,7 @@
 
 
                     function lightFree(){
-                        light0.intensity=1;
+                        light0.intensity=2;
                         setTimeout(function(){
                             light0.intensity=0;
                         },10)

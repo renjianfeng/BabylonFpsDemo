@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script></script>
+    <script src="../Babylon/babylon.3.1.js"></script>
+    <!-- <script src="../assets/Babylon.js-master/dist/Oimo.js"></script>  新的物理引擎 -->
+
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+        .view-star{
+            position: fixed;
+            top:0;
+            bottom:0;
+            right:0;
+            left:0;
+            margin:auto;
+            width: 30px;
+            height: 30px;
+            background-image: url("../images/ico_star.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <div class="view-star"></div>
+</head>
+<body>
+<canvas id="renderCanvas"></canvas>
+<script type="text/javascript" src="./main.js"></script>
+<script type="text/javascript">
+    // 从下面的HTML里获取画布元素
+    var canvas = document.querySelector("#renderCanvas");
+
+    // 加载BABYLON 3D引擎
+    var engine = new BABYLON.Engine(canvas, true);
+    // -------------------------------------------------------------
+    // 此处开始定义函数，它在构建完后就被调用
+    var createScene = function () {
+        // 现在创建一个Babylon场景对象
+        scene = new BABYLON.Scene(engine);
+
+        // 改变场景的背景色为绿色.
+        scene.clearColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+
+        camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 100, -100), scene);
+        camera.attachControl(canvas, true);
+        camera.keysUp.push(87);
+        camera.keysDown.push(83);
+        camera.keysLeft.push(65);
+        camera.keysRight.push(68);
+        camera.inertia=0.2;
+        camera.speed=12;
+        camera.angularSensibility=500;
+        camera.position=new BABYLON.Vector3(-19.465025957052628,4.876481988455981,-51.377424205089845)
+        camera.rotation=new BABYLON.Vector3(0.07718220213787982,0.29553265017327757,0)
+
+
+
+        light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(0, 0, 10), scene);
+        light.intensity = 2;
+        light.position=new BABYLON.Vector3(0, 0, -40)
+        light.autoUpdateExtends=false;
+        light.shadowFrustumSize=60
+
+       // light0 = new BABYLON.SpotLight("Spot0", new BABYLON.Vector3(0, 0, -60), new BABYLON.Vector3(0, 0, 1), 0.8, 2, scene);
+
+        //  light.position=new BABYLON.Vector3(camera.position.x, camera.position.y+200, camera.position.z)
+
+       /* light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
+        light1.intensity = 0.3;*/
+
+
+        shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
+        shadowGenerator.bias = 0.01;
+
+        shadowGenerator.useBlurCloseExponentialShadowMap = true;
+       // shadowGenerator.forceBackFacesOnly= true;
+        //shadowGenerator.depthScale=380
+        //shadowGenerator.blurScale=0.6
+        //  shadowGenerator.frustumEdgeFalloff = 10.0;
+        light.shadowMinZ=20
+        light.shadowMaxZ=100
+
+
+         plane = BABYLON.Mesh.CreatePlane("plane", 100.0, scene);
+        plane.position.z=10
+        var mddss= new BABYLON.StandardMaterial("texture1", scene);
+        plane.material=mddss
+
+
+        BABYLON.SceneLoader.ImportMesh("", "../example/model/NPC/", "NPC.babylon", scene, function(newMeshes, particleSystems,skeletons) {
+            newMeshes.forEach(function(mesh,index){
+                shadowGenerator.getShadowMap().renderList.push(mesh);
+                shadowGenerator.getShadowMap().renderList.push(plane);
+                mesh.receiveShadows = true;
+                plane.receiveShadows = true;
+            })
+        })
+
+
+
+
+
+
+        // 离开该函数
+        return scene;
+    }; // End of createScene function
+    // -------------------------------------------------------------
+    // 现在, 调用刚创建完的createScene函数
+    scene = createScene();
+    // 注册一个渲染循环已重复的渲染场景
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+    // 监测浏览器/画布大小改变事件
+    window.addEventListener("resize", function() {
+        engine.resize();
+    });
+</script>
+
+</body>
+</html>
