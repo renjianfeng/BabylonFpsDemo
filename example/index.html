@@ -5,6 +5,7 @@
     <title>Title</title>
     <script></script>
     <script src="../Babylon/babylon.3.1.js"></script>
+    <script src="../Babylon/babylon-navigation-mesh.js"></script>
     <!-- <script src="../assets/Babylon.js-master/dist/Oimo.js"></script>  新的物理引擎 -->
 
     <style>
@@ -33,8 +34,33 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }
+        .game-overbg{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(246, 8, 0, 0.6);
+            display: none;
+        }
+        .game-text{
+            position: fixed;
+            top:0;
+            bottom:0;
+            right:0;
+            left:0;
+            margin:auto;
+            width: 600px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 60px;
+            text-align: center;
+        }
     </style>
     <div class="view-star"></div>
+    <div class="game-overbg" id="game_over">
+        <div class="game-text">游戏结束！！</div>
+    </div>
 </head>
 <body>
 <canvas id="renderCanvas"></canvas>
@@ -49,7 +75,16 @@
     // 此处开始定义函数，它在构建完后就被调用
     var createScene = function () {
         // 现在创建一个Babylon场景对象
+
+        delete engine;
+        engine = new BABYLON.Engine(canvas, true, {
+            deterministicLockstep: true,
+            lockstepMaxSteps: 4
+        });
+
         scene = new BABYLON.Scene(engine);
+
+
 
         // 改变场景的背景色为绿色.
         scene.clearColor = new BABYLON.Color3(0.2, 0.2, 0.2);
@@ -57,21 +92,24 @@
         mp5 = new BABYLON.Sound("Gunshot", "music/m4a12.wav", scene, null, { playbackRate: 1, volume: 2,loop: false });
         hq = new BABYLON.Sound("Gunshot", "music/hq.wav", scene, null, { playbackRate: 1, volume: 2,loop: false });
         sq = new BABYLON.Sound("Gunshot", "music/sq.ogg", scene, null, { playbackRate: 1, volume: 2,loop: false });
-        feng = new BABYLON.Sound("Gunshot", "music/feng.wav", scene, null, { playbackRate: 1, volume: 2,loop: true,autoplay:true });
+        feng = new BABYLON.Sound("Gunshot", "music/bgmkb.mp3", scene, null, { playbackRate: 1, volume: 2,loop: true,autoplay:true });
+        gameoverM = new BABYLON.Sound("Gunshot", "music/gameover.wav", scene, null, { playbackRate: 1, volume: 4 });
 
 
 
-        camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 100, -100), scene);
+        camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(  -76.25859464521288, -0.8086594957437754, -15.547828963632178), scene);
         camera.attachControl(canvas, true);
         camera.keysUp.push(87);
         camera.keysDown.push(83);
         camera.keysLeft.push(65);
         camera.keysRight.push(68);
         camera.inertia=0.2;
-        camera.speed=12;
+        camera.speed=1.6;
         camera.angularSensibility=500;
-        scene.gravity = new BABYLON.Vector3(0, -7, 0);
+        scene.gravity = new BABYLON.Vector3(0, -0.3, 0);
         camera.fov=1
+
+
 
         // 开启碰撞
         scene.collisionsEnabled = true;
@@ -80,11 +118,14 @@
         camera.checkCollisions = true;
 
         //重力相机。
-        camera.applyGravity = true;
+       camera.applyGravity = true;
 
         //摄像机上的椭球属性
-        camera.ellipsoid = new BABYLON.Vector3(2, 6, 2);
-        camera.maxZ=10000
+        camera.ellipsoid = new BABYLON.Vector3(0.4, 1.2, 0.4);
+        camera.maxZ=1000
+        camera.minZ=0
+
+
 
       /*  var defaultPipeline = new BABYLON.DefaultRenderingPipeline("default", true, scene, [camera]);
         defaultPipeline.bloomEnabled = true;
@@ -93,121 +134,62 @@
         defaultPipeline.cameraFov = 0.1;*/
 
         scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
-        scene.fogColor = new BABYLON.Color3(1, 1, 1);
-        scene.fogDensity = 0.0005;
+        scene.fogColor = new BABYLON.Color3(0, 0, 0);
+        scene.fogDensity = 0.005;
 
-
-
-
-        light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(10, -10, -10), scene);
-        light.intensity = 2;
-        light.position=new BABYLON.Vector3(0, 300, 300)
-        light.autoUpdateExtends=false;
-        light.shadowFrustumSize=1100
-      //  light.position=new BABYLON.Vector3(camera.position.x, camera.position.y+200, camera.position.z)
 
         light1 = new BABYLON.HemisphericLight("Omni", new BABYLON.Vector3(50, 100, 50), scene);
-        light1.intensity = 0.3;
+        light1.intensity = 0.7;
 
 
 
-        var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(1, 10, 1), scene);
+        light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(0, 0, 0), scene);
         light0.diffuse = new BABYLON.Color3(1, 0.5, 0);
         light0.specular = new BABYLON.Color3(1, 0.5, 0);
         light0.intensity = 0;
-        light0.range=120
+        light0.range=10
         light0.angle = 0;
         light0.exponent =0;
         light0.parent=camera;
-        console.log(light0)
-        light0.position.y=10
-        light0.position.z=0
+        light0.position.z=1.5
+    //    console.log(light0)
+     /*   light0.position.y=0
+        light0.position.z=0*/
+
+
+        light2 = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(0, 0, 0), new BABYLON.Vector3(-0.1, 0, 1), Math.PI / 3, 2, scene);
+
+        light2.parent=camera;
+
+        light2.diffuse = new BABYLON.Color3(0, 1, 0);
+        light2.specular = new BABYLON.Color3(0, 1, 0);
+
+        light2.position.x=0.3
+        light2.position.y=0
+        light2.exponent=45
+        light2.intensity = 10;
+        light2.range=40
 
 
 
-
-        shadowGenerator2 = new BABYLON.ShadowGenerator(100, light0);
+        shadowGenerator3 = new BABYLON.ShadowGenerator(512, light2);
         //  shadowGenerator.frustumEdgeFalloff = 10.0;
-        light0.shadowMinZ=0
-        light0.shadowMaxZ=10
-        shadowGenerator2.useBlurCloseExponentialShadowMap = true;
-        // shadowGenerator.useKernelBlur = true;
-
-        shadowGenerator2.blurScale=1
-
-
-        shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
-        shadowGenerator.bias = 0.0000001;
-
-        shadowGenerator.useBlurCloseExponentialShadowMap = true;
-       // shadowGenerator.forceBackFacesOnly= true;
-        shadowGenerator.depthScale=380
-        shadowGenerator.blurScale=0.6
-        //  shadowGenerator.frustumEdgeFalloff = 10.0;
-        light.shadowMinZ=-100
-        light.shadowMaxZ=500
-      //  shadowGenerator.useBlurCloseExponentialShadowMap = true;
-        // shadowGenerator.useKernelBlur = true;
-
-        //shadowGenerator.blurScale=0.4
-
-
-   /*  var lights=[];
-     var shadowGenerators=[]
-     scene.meshes.forEach(function(mesh,i){
-         lights[i].setEnabled(false);
-         lights[i].excludedMeshes=[mesh]
-         lights[i].setEnabled(true);
-         lights[i] = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(0, 0, 0), scene);
-         lights[i].intensity = 2;
-         lights[i].position=mesh.position
-         lights[i].position.y=mesh.position+100
-         lights[i].shadowMinZ=0
-         lights[i].shadowMaxZ=500
-         shadowGenerators[i] = new BABYLON.ShadowGenerator(1024, light);
-         shadowGenerators[i].useBlurCloseExponentialShadowMap = true;
-         shadowGenerators[i].blurScale=0.4
-
-     })*/
-
-      /*  light = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(10, -10, -10), scene);
-        light.intensity = 2;
-        light.position=new BABYLON.Vector3(0, 300, 300)*/
+        shadowGenerator3.bias = 0.00005;
+        //shadowGenerator3.blurScale=1
 
 
 
-
-
-        // 将光源光线置为昏暗
-/*
-        var pipeline = new BABYLON.StandardRenderingPipeline(
-                "standard", // The name of the pipeline
-                scene, // The scene instance
-                1.0, // The rendering pipeline ratio
-                null, // The original post-process that the pipeline will be based on
-                [camera] // The list of cameras to be attached to
-        );
-        pipeline.brightThreshold = 0.2;
-        pipeline.exposure = 0.01;
-        // Enable Volumetric Lights computation in the pipeline
-        pipeline.VLSEnabled = true;
-
-        //体积灯光效果
-        pipeline.sourceLight =light;
-
-        pipeline.volumetricLightPower = 4;
-
-        pipeline.volumetricLightStepsCount = 50;*/
-
-
-
+        shadowGenerator2 = new BABYLON.ShadowGenerator(512, light0);
+        shadowGenerator2.bias = 0.005;
+        //shadowGenerator2.blurScale=1
 
 
         //m4a1
         box2 = BABYLON.Mesh.CreateBox("crate", 2, scene);
         box2.material = new BABYLON.StandardMaterial("Mat", scene);
-        box2.material.alpha=0;
-        box2.position = new BABYLON.Vector3(0, -60, 8);
+        box2.material.alpha=1;
+        box2.position = new BABYLON.Vector3(0, 0, 10);
+        box2.rotation = new BABYLON.Vector3(0, Math.PI, 0);
         box2.parent=camera;
         box2.checkCollisions = false;
         box2.isPickable=false
@@ -216,45 +198,14 @@
         box3 = BABYLON.Mesh.CreateBox("crate", 2, scene);
         box3.material = new BABYLON.StandardMaterial("Mat", scene);
         box3.material.alpha=0;
-        box3.position = new BABYLON.Vector3(5, -61, 6);
+        box3.position = new BABYLON.Vector3(5, -61, 4);
         box3.parent=camera;
         box3.checkCollisions = false;
         box3.isPickable=false
 
 
 
-        //怪物
-        npc=[]
-        npc_a=[]
-        npc_b=[]
-        npc_c=[]
 
-        for(var i=0;i<=2;i++){
-            npc[i]= BABYLON.Mesh.CreateBox("crate44", 2, scene);
-            npc[i].material = new BABYLON.StandardMaterial("Mat", scene);
-            npc[i].material.alpha=0;
-            npc[i].position = new BABYLON.Vector3(0, 82, 0);
-            npc[i].visibility=0
-          //  scene.removeMesh(npc[i])
-            //npc[i].scaling = new BABYLON.Vector3(4, 16, 4);
-        }
-
-
-        for(var i=0;i<=npc.length;i++){
-            npc_a[i]= BABYLON.Mesh.CreateBox("npc", 2, scene);
-            npc_a[i].material = new BABYLON.StandardMaterial("Mat", scene);
-            npc_a[i].material.alpha=0;
-            npc_a[i].position = new BABYLON.Vector3(i*20*Math.random()-30, 85, i*20*Math.random()-30);
-            npc_a[i].scaling = new BABYLON.Vector3(4, 13, 4);
-            npc_a[i].checkCollisions = true;
-          /*  npc_a[i].ellipsoid = new BABYLON.Vector3(50, 70, 50);
-            npc_a[i].ellipsoidOffset = new BABYLON.Vector3(0, 2, 0);*/
-            npc_a[i].applyGravity = true;
-            npc_a[i].dieaState=false;
-            npc_a[i].visibility=0
-
-         //   scene.removeMesh(npc_a[i])
-        }
 
 
 
@@ -264,7 +215,7 @@
         box5 = BABYLON.Mesh.CreateBox("crate", 2, scene);
         box5.material = new BABYLON.StandardMaterial("Mat", scene);
         box5.material.alpha=0;
-        box5.position = new BABYLON.Vector3(0.6, 0.2, 3);
+        box5.position = new BABYLON.Vector3(0.3, -0.2, 3);
         box5.parent=camera;
         box5.checkCollisions = false;
         box5.isPickable=false
@@ -282,6 +233,20 @@
         scene.removeMesh(box2)
         scene.removeMesh(box5)
         scene.removeMesh(box6)
+
+
+        box7 = BABYLON.Mesh.CreateBox("meinv", 2, scene);
+        box7.material = new BABYLON.StandardMaterial("Mat", scene);
+      //  box7.material.alpha=0;
+
+
+
+
+
+        box7.position = new BABYLON.Vector3( -65.32206580220254,  -3.318501880339158, -14.782754909696893);
+        box7.scaling= new BABYLON.Vector3(0.3, 0.3,0.3);
+        box7.checkCollisions = false;
+        box7.isPickable=true
 
 
         //首先要做的是定义我们的重力矢量，定义G力。在一个经典的世界，如地球，重力的方向沿Y轴向下（负），但随时改变它！
@@ -304,6 +269,9 @@
 
         qiangState=1;
 
+
+
+
         var freeHuo=new freeHuoConstructor(box5)
 
 
@@ -318,141 +286,43 @@
         decalMaterial.disableLighting=true;
 
 
-        scene.registerBeforeRender(function () {
+        scene.onAfterStepObservable.add(function () {
+
+         /*   light.position.z=camera.position.z
+            light.position.x=camera.position.x
+            light.position.y=camera.position.y+50*/
+
+
+            box7.lookAt(new BABYLON.Vector3(camera.position.x,box7.position.y,camera.position.z))
+
 
             if(freeState==true){
                 var pickResult = scene.pick(window.innerWidth/2, window.innerHeight/2);
                 if (pickResult.hit) {
-                    console.log(pickResult.pickedMesh.name)
+                 //   console.log(pickResult.pickedMesh.name)
                    // console.log(pickResult.pickedPoint)
-                    if(pickResult.pickedMesh.name=="npc"){
-                        pickResult.pickedMesh.dieState=true
-                        pickResult.pickedMesh.checkCollisions = false;
-                        pickResult.pickedMesh.isPickable=false
+                    if(pickResult.pickedMesh.name=="npc"||pickResult.pickedMesh.name2=="meinv"){
+                      //  pickResult.pickedMesh.dieState=true
+                     //   pickResult.pickedMesh.checkCollisions = false;
+                    //    pickResult.pickedMesh.isPickable=false
                         Xue.Position(pickResult.pickedPoint)
                         Xue.start();
                         setTimeout(function(){
                             Xue.stop();
                         },100)
                     }else{
-                        var decalSize = new BABYLON.Vector3(2, 2, 2);
-                        var newDecal = BABYLON.Mesh.CreateDecal("decal", pickResult.pickedMesh, pickResult.pickedPoint, pickResult.getNormal(true), decalSize);
-                        newDecal.material = decalMaterial;
-                        setBoom.Position(pickResult.pickedPoint)
-                        setBoom.start();
-                        setTimeout(function(){
-                            setBoom.stop();
-                        },100)
+                            setBoom.Position(pickResult.pickedPoint)
+                            setBoom.start();
+                            setTimeout(function(){
+                                setBoom.stop();
+                            },100)
                     }
-
-
                 }
             }
 
-            if(dd.length>2){
-                npc_a.forEach(function(np,index){
-                    if(np.dieState==true){
-                       // np.dieState==false;
-                      /*  console.log(index)
-                        console.log(npc[index].child)*/
-                        if(np.dieaState==false){
-                            console.log(22222)
-                            np.dieaState=true
-
-                            try{
-                                if(index==0){
-                                    npc_b[0].stop()
-                                    npc_b[1].stop()
-                                    setTimeout(function(){
-                                        scene.beginAnimation(scene.getMeshByID(npc_c[0]), 620, 665, false, 3);
-                                        scene.beginAnimation(scene.getMeshByID(npc_c[1]), 620, 665, false, 3);
-                                    },300)
-
-                                }else{
-                                    npc_b[index*2].stop()
-                                    npc_b[index*2+1].stop()
-                                    console.log((index*2)+"_"+(index*2+1))
-                                    setTimeout(function(){
-                                        scene.beginAnimation(scene.getMeshByID(npc_c[index*2]), 620, 665, false, 3);
-                                        scene.beginAnimation(scene.getMeshByID(npc_c[index*2+1]), 620, 665, false, 3);
-                                    },300)
-                                }
-                            }catch(e){
-
-                            }
-
-                        }
-
-
-                    }
-                })
-            }
 
         })
 
-        scene.registerBeforeRender(function () {
-
-            npc.forEach(function(np,index){
-                npc_a[index].rotation.x=0
-                npc_a[index].rotation.z=0
-                if(npc_a[index].dieState!=true){
-                    lookAt(npc_a[index],camera.position)
-                }
-
-
-                np.position.x=npc_a[index].position.x;
-                np.position.z=npc_a[index].position.z;
-               // np.position.y
-                np.rotation.y=npc_a[index].rotation.y+Math.PI*0.5;
-
-
-                if(npc_a[index].position.x-camera.position.x>10){
-                   // npc_a[index].position.x-=0.4
-                    if(npc_a[index].dieState==true){
-                        npc_a[index].moveWithCollisions(new BABYLON.Vector3(0, 0, 0));
-                    }else{
-                        npc_a[index].moveWithCollisions(new BABYLON.Vector3(-moveSpeed, 0, 0));
-                    }
-
-                }else if(npc_a[index].position.x-camera.position.x<10){
-                    //npc_a[index].position.x+=0.4
-
-                    if(npc_a[index].dieState==true){
-                        npc_a[index].moveWithCollisions(new BABYLON.Vector3(0, 0, 0));
-                    }else{
-                        npc_a[index].moveWithCollisions(new BABYLON.Vector3(+moveSpeed, 0, 0));
-                    }
-
-
-                }else if(npc_a[index].position.x-camera.position.x<=0.4&&npc_a[index].position.x-camera.position.x>=-0.4){
-                   // npc_a[index].position.x=camera.position.x
-                    npc_a[index].moveWithCollisions(new BABYLON.Vector3(0, 0, 0));
-                }
-
-                if(npc_a[index].position.z-camera.position.z>10){
-                   // npc_a[index].position.z-=0.4
-                    if(npc_a[index].dieState==true){
-                        npc_a[index].moveWithCollisions(new BABYLON.Vector3(0, 0, 0));
-                    }else{
-                        npc_a[index].moveWithCollisions(new BABYLON.Vector3(0, 0, -moveSpeed));
-                    }
-
-                }else if(npc_a[index].position.z-camera.position.z<-10){
-                   // npc_a[index].position.z+=0.4
-                    if(npc_a[index].dieState==true){
-                        npc_a[index].moveWithCollisions(new BABYLON.Vector3(0, 0, 0));
-                    }else{
-                        npc_a[index].moveWithCollisions(new BABYLON.Vector3(0, 0, +moveSpeed))
-                    }
-
-                }else if(npc_a[index].position.z-camera.position.z<=0.4&&npc_a[index].position.z-camera.position.z>=-0.4){
-                    //npc_a[index].position.z=camera.position.z
-                    npc_a[index].moveWithCollisions(new BABYLON.Vector3(0, 0, 0));
-                }
-            })
-
-
-        });
 
 
 
@@ -467,276 +337,370 @@
 
 
 
-         BABYLON.SceneLoader.ImportMesh("", "../example/model/map1/", "map20.babylon", scene, function(newMeshesmap) {
-
-            meshmap=newMeshesmap
 
 
 
-            scene.getMeshByName("Plane001").material.diffuseTexture.uScale=20;
-            scene.getMeshByName("Plane001").material.diffuseTexture.vScale=20;
-            /* scene.getMeshByName("TiledBrick021").material.diffuseTexture.vScale=20;
-             scene.getMeshByName("TiledBrick024").material.diffuseTexture.vScale=20;
-             scene.getMeshByName("TiledBrick022").material.diffuseTexture.vScale=20;
-             scene.getMeshByName("TiledBrick023").material.diffuseTexture.vScale=20;*/
 
+        var navigation = new Navigation();
+         BABYLON.SceneLoader.ImportMesh("", "../example/model/kejinavmap2/", "kejinavmap2.babylon", scene, function(newMeshesmap) {
+
+
+
+             var navmesh = scene.getMeshByName("Navmesh");
+
+
+             var zoneNodes = navigation.buildNodes(navmesh);
+             navigation.setZoneData('level', zoneNodes);
+
+
+             var npc_state=[0,0,0]
+
+             function castRay() {
+                 var origin = camera.position;
+
+                 var _direction = new BABYLON.Vector3(0, Math.PI * -2, 0);
+
+                 var length = 0.5;
+
+                 var ray = new BABYLON.Ray(origin, _direction, length);
+                 // ray.show(scene, new BABYLON.Color3(1, 1, 0.1));
+
+                 var hit = scene.pickWithRay(ray);
+                 hit.fastCheck = true;
+
+                 if (hit.pickedMesh) {
+
+                     var path = navigation.findPath(box7.position, hit.pickedPoint, 'level', navigation.getGroup('level', box7.position)) || [];
+
+                     if (path && path.length > 0) {
+                         var length = 0;
+                         var direction = [{
+                             frame: 0,
+                             value: box7.position
+                         }];
+                         for (var i = 0; i < path.length; i++) {
+                             length += BABYLON.Vector3.Distance(direction[i].value, path[i]);
+                             direction.push({
+                                 frame: length * 100,
+                                 value: path[i]
+                             });
+                         }
+
+                         for (var i = 0; i < direction.length; i++) {
+                             direction[i].frame /= length;
+                         }
+
+                         var moveCamera = new BABYLON.Animation("CameraMove", "position", 180 / length + 10, BABYLON.Animation.ANIMATIONTYPE_VECTOR3, BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT);
+
+                         moveCamera.setKeys(direction);
+
+                         box7.animations.push(moveCamera);
+
+
+                         //    console.log(getDistance(box7,camera))
+                         if (getDistance(box7, camera) <= 10 && getDistance(box7, camera) >= 5) {
+
+                             npc_state[1] = 0
+                             if (npc_state[0] == 0) {
+                                 npc_state[0] = 1
+                                 npc_pao()
+                             }
+                             scene.beginAnimation(box7, 0, 100, false, 1);
+
+                         } else if (getDistance(box7, camera) >= 11) {
+                             npc_state[0] = 0
+                             if (npc_state[1] == 0) {
+                                 npc_state[1] = 1
+                                 npc_pao()
+                             }
+                             scene.beginAnimation(box7, 0, 100, false, 2);
+                             npc_zou()
+                         } else if (getDistance(box7, camera) <= 5) {
+                             if (npc_state[2] == 0) {
+                                 npc_state[2] = 1
+                                 gameover()
+                                 fps_D.forEach(function (mesh) {
+                                     mesh.position.y = 1000
+                                 })
+                                 gameoverM.play()
+                                 setTimeout(function () {
+                                     document.getElementById("game_over").style.display = "block";
+                                 }, 1000)
+                             }
+                             scene.beginAnimation(box7, 0, 0, false, 0);
+                             camera.detachControl(canvas, false);
+                             camera.setTarget(new BABYLON.Vector3(box7.position.x, camera.position.y, box7.position.z))
+                         }
+
+
+                         //npcmove.speedRatio=4
+                     }
+
+                 }
+
+             }
+
+             setInterval(function(){
+                 castRay();
+             },1000)
 
 
 
 
 
             newMeshesmap.forEach(function(mesh,index){
-               // mesh.position.y+=100;
-               // var _mesh=mesh
 
-                mesh.instances.forEach(function(_mesh){
-                    if(mesh.name!="Group01"){
-                        shadowGenerator.getShadowMap().renderList.push(_mesh);
-                        shadowGenerator2.getShadowMap().renderList.push(_mesh);
-                        _mesh.receiveShadows = true;
+                // mesh.checkCollisions = true;
+                mesh.isPickable = true;
+                mesh.checkCollisions = true;
+
+                 //   mesh.parent=box6
+              //   box6.scaling=new BABYLON.Vector3(1,1,1)
+                 //      shadowGenerator.getShadowMap().renderList.push(mesh);
+                 shadowGenerator2.getShadowMap().renderList.push(mesh);
+                 shadowGenerator3.getShadowMap().renderList.push(mesh);
+                 mesh.receiveShadows = true;
+
+                 if(mesh.name!="Navmesh"){
+                     /* mesh.material=qiangMaterial
+                      mesh.clone().material=qiangMaterial*/
+                 }else{
+                     mesh.visibility=0;
+                     mesh.checkCollisions = false;
+                     mesh.isPickable = false;
+                 }
+
+
+
+              /*  mesh.createOrUpdateSubmeshesOctree(1000, 1000)
+                mesh.useOctreeForCollisions()*/
+
+             })
+
+             newMeshesmap.forEach(function(mesh,index){
+                 mesh.subdivide(100)
+                 mesh.createOrUpdateSubmeshesOctree()
+                 mesh.useOctreeForCollisions()
+                 mesh.useOctreeForPicking()
+                 mesh.useOctreeForRenderingSelection()
+             })
+
+
+
+          //   var octree = scene.createOrUpdateSelectionOctree(200, 2)
+
+
+    })
+
+
+        function getDistance(e,o) {
+            var n = e.position.x
+                , t = e.position.y
+                , i = e.position.z
+                , r = o.position.x
+                , s = o.position.y
+                , a = o.position.z;
+            return Math.sqrt(Math.pow(n - r, 2) + Math.pow(t - s, 2) + Math.pow(i - a, 2))
+        }
+
+        BABYLON.SceneLoader.ImportMesh("", "../example/model/npc_njs2/", "npc_njs2.babylon", scene, function(newMeshesmap, particleSystems,skeletons) {
+            newMeshesmap.forEach(function(mesh,index){
+                    mesh.name2="meinv"
+                    mesh.parent=box7
+
+
+
+                var c_music=0;
+
+                var music = new BABYLON.Sound("Violons", "music/nv_npc_jiao.wav", scene, function(){
+                    musicPlay()
+                }, { volume: 0,loop:true });
+
+
+                var music2 = new BABYLON.Sound("Violons", "music/nv_npc_jiao2.wav", scene, function(){
+                    musicPlay()
+                }, { volume: 0,loop:true });
+
+                var clearM=[];
+
+                function musicPlay(){
+                    c_music++
+                    if(c_music>=3) {
+                        music.play()
+                        music2.play()
                     }
+                        this.m1=function(){
+                                music.currentTime = 0;
+                                music2.currentTime = 0;
+                                music.setVolume(4)
+                                music2.setVolume(0)
+                        }
 
-                })
-                /*for (var index = 0; index < 30; index++) {
-                  //  var newInstance = mesh.createInstance("i" + index);
-                    if(_mesh.createInstance()){
-                        _mesh.createInstance().position.y+=100
-                        _mesh= _mesh.createInstance();
-                    }
-                }*/
+                        this.m2=function(){
+                            music.currentTime = 0;
+                            music2.currentTime = 0;
+                                music.setVolume(0)
+                                music2.setVolume(4)
+                        }
+                        this.m3=function(){
+                            music.currentTime = 0;
+                            music2.currentTime = 0;
+                            music.setVolume(0)
+                            music2.setVolume(0)
+                        }
 
-                if(mesh.name!="Navmesh"){
-                  /* mesh.material=qiangMaterial
-                   mesh.clone().material=qiangMaterial*/
-                   // mesh.parent=box6
-                    box6.scaling=new BABYLON.Vector3(0.3,0.3,0.3)
-                    /*mesh.checkCollisions = true
-                    mesh.clone().checkCollisions = true*/
-                    shadowGenerator.getShadowMap().renderList.push(mesh);
-                    shadowGenerator2.getShadowMap().renderList.push(mesh);
-                    mesh.receiveShadows = true;
-                  //  console.log(mesh.createInstance())
-                   /* if(mesh.material){
-                        mesh.material.diffuseTexture=new BABYLON.Texture("../example/model/map1/WhiteBrick_s.tga", scene);
-                        mesh.material.diffuseTexture.coordinatesIndex=0
-                        mesh.material.diffuseTexture.hasAlpha=false;
-                    }*/
-
-                }else{
-                    mesh.visibility=0;
                 }
 
+                var objMusic=new musicPlay()
+
+                music.maxDistance=30;
+                music.attachToMesh(box7);
+
+                    mesh.isPickable = true;
+                    box7.scaling=new BABYLON.Vector3(0.04,0.04,0.04)
+                 //   shadowGenerator.getShadowMap().renderList.push(mesh);
+                    shadowGenerator2.getShadowMap().renderList.push(mesh);
+                    shadowGenerator3.getShadowMap().renderList.push(mesh);
+
+                mesh.position.y+=23
+
+                npc_zou=function(){
+                    scene.beginAnimation(mesh, 162, 226, true);
+                    objMusic.m2()
+                //    console.log(1111111)
+                }
+
+                npc_pao=function(){
+                    scene.beginAnimation(mesh, 227, 263, true);
+                    objMusic.m1()
+                 //   console.log(2222222)
+                }
+
+                gameover=function(){
+                    scene.beginAnimation(mesh, 264, 325, true);
+                    objMusic.m3()
+                //    console.log(3333333)
+                }
+
+
+
+
             })
-
-
-
-         /*   scene.getMeshByName("Cube").material=qiangMaterial
-            scene.getMeshByName("Cube (1)").material=qiangMaterial
-            scene.getMeshByName("Cube (2)").material=qiangMaterial
-            scene.getMeshByName("Cube (3)").material=qiangMaterial
-            scene.getMeshByName("Cube (4)").material=qiangMaterial*/
-
-
-
-           /* shadowGenerator.getShadowMap().renderList.push(scene.getMeshByName("crate"));
-            scene.getMeshByName("crate").receiveShadows = true;*/
-
-
         })
 
 
 
+        loadMeshes(models,function(){
+            v_1.show()
+        })
 
 
-        BABYLON.SceneLoader.ImportMesh("", "../example/model/qiang2/", "qiang2.babylon", scene, function(newMeshes, particleSystems,skeletons) {
+        document.onkeydown = keyevent;
+        document.onkeyup = keyevent2;
 
-            BABYLON.SceneLoader.ImportMesh("", "../example/model/qiang3/", "qiang3.babylon", scene, function(newMeshes2, particleSystems,skeletons) {
-
-
-                BABYLON.SceneLoader.ImportMesh("", "../example/model/NPC/", "NPC.babylon", scene, function(newMeshes3, particleSystems,skeletons) {
+        var isLocked = false;
 
 
-                    var i=0
-                    npc.forEach(function(sp){
-                        newMeshes3.forEach(function(mesh,index){
-                            mesh.applyFog=true;
-                            dd[index]=mesh.clone()
-                            dd[index].isPickable=false
-                            if(mesh.skeleton!=undefined){
-                                dd[index].skeleton=mesh.skeleton.clone()
-                                scene.beginAnimation(dd[index].skeleton, 0, 665, true, 0.8);
-                                //scene.beginAnimation(dd, 0, 100, true, 0.8);
-                            }
-
-                            shadowGenerator.getShadowMap().renderList.push(dd[index]);
-                            shadowGenerator2.getShadowMap().renderList.push(dd[index]);
-                            dd[index].receiveShadows = true;
-
-                            if(index==3||index==2){
-                                dd[index].parent=sp
-//                                /*npc_c[i]=scene.beginAnimation(dd[index],600, 665, false, 1);
-//                                npc_c[i].stop()*/
-                                dd[index].id="dd_"+i;
-                                npc_c[i]=dd[index].id;
-                                npc_b[i]=scene.beginAnimation(scene.getMeshByID(dd[index].id), 45, 60, true, 1);
-                              //  npc_b[i].reset()
-                                i++
-                              //  console.log(1112)
-                            }
-
-                        })
-                        })
+        var v_1_state;
+        var v_2_state=true;
+        var v_3_state;
 
 
+        scene.onPointerDown = function (evt) {
+
+            camera._needMoveForGravity = true;
 
 
-                    newMeshes4=newMeshes3.clone()
-                    console.log(newMeshes4)
-
-                })
-                console.log(1112)
-                var isLocked = false;
-
-                var ready
-                var ready2
-
-                var ready_2
-                var ready2_2
-                setQiangState(qiangState)
-
-                document.onkeydown = keyevent;
-
-                /*scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9").visibility=0;
-                scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10").visibility=0;*/
-
-
-                var free
-                var free2
-                var freemusic
-                // On click event, request pointer lock
-                scene.onPointerDown = function (evt) {
-                    light0.intensity=2;
-                    if(qiangState==1){
-                        mp5.play()
-                        freemusic=setInterval(function(){mp5.stop();lightFree(); mp5.play()},0)
-                       // mp5.stop();lightFree(); mp5.play()
-                    }else{
-                        //sq.play()
-                        sq.stop(); lightFree(); sq.play()
-                    }
-
-
-                    function lightFree(){
-                        light0.intensity=2;
-                        setTimeout(function(){
-                            light0.intensity=0;
-                        },10)
-                    }
-
+            if(qiangState==1){
+                light0.intensity=1;
+                freeState=true;
+                freeHuo.start()
+                mp5.play()
+                v_1.do();
+                freemusic=setInterval(function(){mp5.stop();lightFree(); v_1.do(); mp5.play()},20)
+                // mp5.stop();lightFree(); mp5.play()
+            }else if(qiangState==2){
+                light0.intensity=1;
+                //sq.play()
+                if(v_2_state==true){
                     freeState=true;
                     freeHuo.start()
-                    free = scene.beginAnimation(scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed"), 75, 85, true,3.5);
-                    free2 = scene.beginAnimation(scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418"), 75, 85, true,3.5);
-
-                    free_2 = scene.beginAnimation(scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9"), 79, 82, false,1.5);
-                    free2_2 = scene.beginAnimation(scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10"), 79, 82, false,1.5);
-
-                    free.reset()
-                    free2.reset()
-                    free_2.reset()
-                    free2_2.reset()
-
-                    //true/false check if we're locked, faster than checking pointerlock on each single click.
-                    if (!isLocked) {
-                        canvas.requestPointerLock = canvas.requestPointerLock || canvas.msRequestPointerLock || canvas.mozRequestPointerLock || canvas.webkitRequestPointerLock || false;
-                        if (canvas.requestPointerLock) {
-                            canvas.requestPointerLock();
-                        }
-                    }
-
-                    // if the click hits the ground object, we change the impact position
-                   /* if (newMeshes.hit) {
-                        console.log(newMeshes.pickedMesh.name)
-                    }
-                    if (newMeshes2.hit) {
-                        console.log(newMeshes.pickedMesh.name)
-                    }*/
-
-                };
-
-                scene.onPointerUp = function (evt) {
-
-                    light0.intensity=0
-
-                    clearInterval(freemusic)
-                  //  gunshot.stop();
-
-                    freeState=false;
-                    freeHuo.stop()
-
-                    free = scene.beginAnimation(scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed"), 75, 75, false,1.5);
-                    free2 = scene.beginAnimation(scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418"), 75, 75, false,1.5);
-
-                    free_2 = scene.beginAnimation(scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9"), 75, 75, false,1);
-                    free2_2 = scene.beginAnimation(scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10"), 75, 75, false,1);
-
+                    v_2.do()
+                    sq.stop(); lightFree(); sq.play()
+                    v_2_state=false;
+                    setTimeout(function(){
+                        v_2_state=true;
+                    },500)
                 }
 
-                // Event listener when the pointerlock is updated (or removed by pressing ESC for example).
-                var pointerlockchange = function () {
-                    var controlEnabled = document.pointerLockElement || document.mozPointerLockElement || document.webkitPointerLockElement || document.msPointerLockElement || false;
-                    // If the user is already locked
-                    if (!controlEnabled) {
-                        camera.detachControl(canvas);
-                        isLocked = false;
-                    } else {
-                        camera.attachControl(canvas);
-                        isLocked = true;
-                    }
-                };
+            }else if(qiangState==3){
+                freeState=false;
+                //sq.play()
+                v_3.do()
+              /*  sq.stop();
+                sq.play()*/
+            }
 
 
-                console.log(111)
-                newMeshes.forEach(function(mesh1){
-                //    mesh1.material.backFaceCulling=false;
-                    mesh1.isPickable=true;
-                    mesh1.parent=box2;
-                    console.log(mesh1.id)
-                })
-
-               /* scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9").renderingGroupId=3;
-                scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10").renderingGroupId=2;*/
-
-                newMeshes2.forEach(function(mesh1){
-                   // mesh1.material.backFaceCulling=false;
-                   // mesh1.renderingGroupId=0;
-                    mesh1.isPickable=true;
-                    mesh1.parent=box3;
-                    console.log(mesh1.id)
-                })
-
-                scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed").renderingGroupId=2;
-                scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418").renderingGroupId=3;
-                scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9").renderingGroupId=1;
-                scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10").renderingGroupId=1;
-
-
-            });
-
-        });
+            function lightFree(){
+                light0.intensity=1;
+                setTimeout(function(){
+                    light0.intensity=0;
+                },0)
+            }
 
 
 
+          /*  free.reset()
+            free2.reset()
+            free_2.reset()
+            free2_2.reset()*/
+
+            //true/false check if we're locked, faster than checking pointerlock on each single click.
+            if (!isLocked) {
+                canvas.requestPointerLock = canvas.requestPointerLock || canvas.msRequestPointerLock || canvas.mozRequestPointerLock || canvas.webkitRequestPointerLock || false;
+                if (canvas.requestPointerLock) {
+                    canvas.requestPointerLock();
+                }
+            }
+
+            // if the click hits the ground object, we change the impact position
+            /* if (newMeshes.hit) {
+                 console.log(newMeshes.pickedMesh.name)
+             }
+             if (newMeshes2.hit) {
+                 console.log(newMeshes.pickedMesh.name)
+             }*/
+
+        };
+
+        scene.onPointerUp = function (evt) {
+
+            light0.intensity=0
+
+            clearInterval(freemusic)
+            //  gunshot.stop();
+
+            freeState=false;
+            freeHuo.stop()
+
+          /*  free = scene.beginAnimation(scene.getMeshByID("1ea0aafd-8f1a-4d57-bd34-3542b5a7baed"), 75, 75, false,1.5);
+            free2 = scene.beginAnimation(scene.getMeshByID("7270915d-8281-4797-a173-3a06ef9a6418"), 75, 75, false,1.5);
+
+            free_2 = scene.beginAnimation(scene.getMeshByID("66b54ec6-cd3b-47ba-96b6-e09c26c35dc9"), 75, 75, false,1);
+            free2_2 = scene.beginAnimation(scene.getMeshByID("0c00c3cf-2490-4da7-b8c2-28ba5216ba10"), 75, 75, false,1);*/
+
+        }
 
 
 
-        yu1 = BABYLON.Mesh.CreateBox("crate", 2, scene);
+    /*    yu1 = BABYLON.Mesh.CreateBox("crate", 2, scene);
         yu1.material = new BABYLON.StandardMaterial("Mat", scene);
         yu1.material.alpha=0;
-        yu1.position = new BABYLON.Vector3(0, 280, 0);
+        yu1.position = new BABYLON.Vector3(0, 280, 0);*/
 
 
-        var skybox = BABYLON.Mesh.CreateBox("skyBox", 10000.0, scene);
+        var skybox = BABYLON.Mesh.CreateBox("skyBox", 600.0, scene);
         var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
         skyboxMaterial.backFaceCulling = false;
         skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("../images/sky15/sky", scene);
@@ -748,7 +712,7 @@
         skybox.material = skyboxMaterial;
         skybox.applyFog=false;
 
-        var xiayu=new Yu(yu1)
+    //    var xiayu=new Yu(yu1)
        // xiayu.start()
 
         var setBoom=new setBooms(new BABYLON.Vector3(-16,0,0))

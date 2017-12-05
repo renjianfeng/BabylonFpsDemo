@@ -6,17 +6,201 @@ function lookAt(tM, lAt) {
     tM.rotation.y = -Math.atan2(lAt.z, lAt.x) - Math.PI/2;
 }
 
+var models=[
+   {"fileSrc":"../example/model/fps_q1_1/", "fileName":"fps_q1_1.babylon","pName":"M60机关枪","mAttr":1,"position":new BABYLON.Vector3(0, 0, 0.5),"rotation": new BABYLON.Vector3(0, Math.PI, 0)},
+    {"fileSrc":"../example/model/fps_q2_1/", "fileName":"fps_q2_1.babylon","pName":"手枪","mAttr":1,"position":new BABYLON.Vector3(0, 0, 0.1),"rotation":new BABYLON.Vector3(0, Math.PI, 0)},
+   {"fileSrc":"../example/model/fps_q3_2/", "fileName":"fps_q3_2.babylon","pName":"光剑","mAttr":1,"position":new BABYLON.Vector3(0, 0, 0.3),"rotation":new BABYLON.Vector3(0, Math.PI, 0)},
+]
+
+var fps_D=[]
+
+function loadMeshes(models,sccuess){
+
+    var countMesh=0;
+    models.forEach(function (model,i){
+        BABYLON.SceneLoader.ImportMesh("", model.fileSrc, model.fileName, scene, function(newMeshes,particleSystems,skeletons) {
+
+
+            fps_D[i] = BABYLON.Mesh.CreateBox("crate", 2, scene);
+            console.log(particleSystems)
+            newMeshes.forEach(function(mesh){
+                mesh.alwaysSelectAsActiveMesh = true;
+                mesh.computeBonesUsingShaders = false;
+
+                mesh.renderingGroupId=1
+
+                mesh.material.subMaterials.forEach(function (mat) {
+                    mat.backFaceCulling=false;
+                })
+
+                console.log(33222)
+                console.log(model.mAttr)
+                mesh.name=model.pName;
+               // mesh.flipFaces();
+                mesh.material.backFaceCulling=false;
+                if(model.mAttr==1){
+
+
+                    fps_D[i].material = new BABYLON.StandardMaterial("Mat", scene);
+                    fps_D[i].material.alpha=0;
+                    fps_D[i].scaling=new BABYLON.Vector3(-0.1,0.1,0.1)
+                    fps_D[i].position = model.position;
+                    fps_D[i].rotation = model.rotation;
+                    fps_D[i].parent=camera;
+                    fps_D[i].checkCollisions = false;
+                    fps_D[i].isPickable=false
+                    mesh.parent= fps_D[i]
+                    mesh.isPickable=false
+                   // mesh.position.z=100;
+                    console.log(model.pName)
+                    console.log(mesh.id)
+                  //  console.log(mesh.name)
+                }
+            })
+
+            countMesh++
+            if(countMesh==models.length){
+                sccuess()
+            }
+        })
+    })
+}
+
+
+
+
+var FpsPlayAn=[
+
+
+    {
+        "name":"M60机关枪",
+        "id":[],
+        "animations":{
+            //切换动画
+            "show":[300,330],
+            //保持动画
+            "keep":[0,70],
+            //攻击动画
+            "do":[71,90],
+            //换弹夹动画
+            "reload":[125,297]
+        },
+        "time":[50,400]
+    },
+    {
+        "name":"手枪",
+        "id":[],
+        "animations":{
+            //切换动画
+            "show":[214,243],
+            //保持动画
+            "keep":[0,50],
+            //攻击动画
+            "do":[83,114],
+            //换弹夹动画
+            "reload":[144,212]
+        },
+        "time":[50,100]
+    },
+    {
+        "name":"光剑",
+        "id":[],
+        "animations":{
+            //切换动画
+            "show":[753,800],
+            //保持动画
+            "keep":[801,919],
+            //攻击动画
+            "do":[920,955],
+            //换弹夹动画
+            "reload":null
+        },
+        "time":[50,0]
+    },
+
+
+
+]
+
+function AniFps(FpsPlayAn,i){
+
+    var showTime;
+    var doTime;
+
+    this.keep=function(){
+        var mesh=scene.getMeshByName(FpsPlayAn[i].name)
+        scene.beginAnimation(mesh, FpsPlayAn[i].animations.keep[0], FpsPlayAn[i].animations.keep[1], true, 0.7);
+    }
+    this.do=function(){
+        clearTimeout(doTime)
+        var mesh=scene.getMeshByName(FpsPlayAn[i].name)
+        scene.beginAnimation(mesh, FpsPlayAn[i].animations.do[0], FpsPlayAn[i].animations.do[1], false, 0.7);
+
+        doTime=setTimeout(function(){
+            scene.beginAnimation(mesh, FpsPlayAn[i].animations.keep[0], FpsPlayAn[i].animations.keep[1], true, 0.7);
+        },(FpsPlayAn[i].animations.do[1]-FpsPlayAn[i].animations.do[0])*FpsPlayAn[i].time[0])
+
+    }
+    this.reload=function(){
+
+        clearTimeout(doTime)
+        var mesh=scene.getMeshByName(FpsPlayAn[i].name)
+        scene.beginAnimation(mesh, FpsPlayAn[i].animations.reload[0], FpsPlayAn[i].animations.reload[1], false, 0.7);
+
+        doTime=setTimeout(function(){
+            scene.beginAnimation(mesh, FpsPlayAn[i].animations.keep[0], FpsPlayAn[i].animations.keep[1], true, 0.7);
+        },(FpsPlayAn[i].animations.do[1]-FpsPlayAn[i].animations.do[0])*FpsPlayAn[i].time[1])
+
+    }
+
+    this.show=function(){
+
+        clearTimeout(showTime)
+        var mesh=scene.getMeshByName(FpsPlayAn[i].name)
+
+        FpsPlayAn.forEach(function (fpsmesh) {
+
+         //   console.log(fpsmesh.name)
+            scene.getMeshByName(fpsmesh.name).visibility=0
+        })
+
+        console.log(FpsPlayAn[i].name)
+
+        mesh.visibility=1
+        scene.beginAnimation(mesh, FpsPlayAn[i].animations.show[0], FpsPlayAn[i].animations.show[1], false, 0.7);
+
+        showTime=setTimeout(function(){
+            scene.beginAnimation(mesh, FpsPlayAn[i].animations.keep[0], FpsPlayAn[i].animations.keep[1], true, 0.7);
+        },(FpsPlayAn[i].animations.show[1]-FpsPlayAn[i].animations.show[0])*50)
+    }
+
+}
+
+v_1= new AniFps(FpsPlayAn,0)
+v_2= new AniFps(FpsPlayAn,1)
+v_3= new AniFps(FpsPlayAn,2)
+
+var jumpState=0
 //按键绑定
 function keyevent(){
     if(event.keyCode==49){
+        v_1.show()
         qiangState=1
-        setQiangState(qiangState)
+      //  setQiangState(qiangState)
         setTimeout(function(){
             hq.play()
         },500)
     }else if(event.keyCode==50){
+        v_2.show()
         qiangState=2
-        setQiangState(qiangState)
+      //  setQiangState(qiangState)
+        setTimeout(function(){
+            hq.play()
+        },500)
+    }else if(event.keyCode==51){
+        v_3.show()
+        qiangState=3
+      //  setQiangState(qiangState)
         setTimeout(function(){
             hq.play()
         },500)
@@ -29,7 +213,52 @@ function keyevent(){
         }else{
             qiangState=1
         }
-        setQiangState(qiangState)
+       // setQiangState(qiangState)
+
+    }else if(event.keyCode==82){
+
+        //换弹夹
+        if(qiangState==1){
+            v_1.reload()
+        }else if(qiangState==2){
+            v_2.reload()
+        }else if(qiangState==3){
+            v_3.reload()
+        }
+        // setQiangState(qiangState)
+    }else if(event.keyCode==32){
+
+        if(jumpState==0){
+            /* camera._localDirection.copyFromFloats(0,25,0)
+             camera.getViewMatrix().invertToRef(camera._cameraTransformMatrix);
+             BABYLON.Vector3.TransformNormalToRef(camera._localDirection,camera._cameraTransformMatrix,camera._transformedDirection);
+             camera.cameraDirection.addInPlace(camera._transformedDirection);*/
+            scene.gravity = new BABYLON.Vector3(0, 0.6, 0);
+
+            setTimeout(function(){
+                scene.gravity = new BABYLON.Vector3(0, -0.3, 0);
+            },100)
+
+            jumpState=1
+            setTimeout(function(){
+                scene.gravity = new BABYLON.Vector3(0, -3, 0);
+                jumpState=0
+            },500)
+        }
+
+    }else if(event.keyCode==16){
+        camera.ellipsoid = new BABYLON.Vector3(2, 3, 2);
+        camera.speed=3
+    }
+
+
+}
+
+function keyevent2(){
+    if(event.keyCode==16){
+        camera.position.y+=6;
+        camera.ellipsoid = new BABYLON.Vector3(2, 6, 2);
+        camera.speed=12
     }
 }
 
@@ -71,6 +300,7 @@ function freeHuoConstructor(mesh){
     // Where the particles come from
     particleSystem.emitter = mesh; // the starting object, the emitter
     particleSystem.maxEmitBox = new BABYLON.Vector3(0, 0, 0); // To...
+    particleSystem.minEmitBox = new BABYLON.Vector3(0, -0, -0); // To...
 
     // Colors of all particles
     particleSystem.color1 = new BABYLON.Color4(0.7, 0.8, 1.0, 0.5);
@@ -82,8 +312,8 @@ function freeHuoConstructor(mesh){
     particleSystem.maxSize = 0.8;
 
     // Life time of each particle (random between...
-    particleSystem.minLifeTime = 0.000001;
-    particleSystem.maxLifeTime = 0.000001;
+    particleSystem.minLifeTime = 0.0001;
+    particleSystem.maxLifeTime = 0.0001;
 
     // Emission rate
     particleSystem.emitRate = 150;
@@ -92,11 +322,11 @@ function freeHuoConstructor(mesh){
     particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
 
     // Set the gravity of all particles
-    particleSystem.gravity = new BABYLON.Vector3(0, -9.81, 0);
+  //  particleSystem.gravity = new BABYLON.Vector3(0, -9.81, 0);
 
     // Direction of each particle after it has been emitted
-    particleSystem.direction1 = new BABYLON.Vector3(-10, -1, -10);
-    particleSystem.direction2 = new BABYLON.Vector3(10, 1, 10);
+    particleSystem.direction1 = new BABYLON.Vector3(-0, -0, 1000);
+    particleSystem.direction2 = new BABYLON.Vector3(0, 0, 1000);
 
     // Angular speed, in radians
     particleSystem.minAngularSpeed = 0;
@@ -105,7 +335,7 @@ function freeHuoConstructor(mesh){
     // Speed
     particleSystem.minEmitPower = 1;
     particleSystem.maxEmitPower = 3;
-    particleSystem.updateSpeed = 0.005;
+    particleSystem.updateSpeed = 5;
 
     // Start the particle system
     this.start=function(){
@@ -113,6 +343,7 @@ function freeHuoConstructor(mesh){
     }
 
     this.stop=function(){
+        console.log("stop")
         particleSystem.stop();
     }
 
@@ -202,8 +433,8 @@ function setBooms(position){
     particleSystem.color2 = new BABYLON.Color4(0.8,0.8, 0.8, 1);
     particleSystem.colorDead = new BABYLON.Color4(0, 0, 0, 0);
 
-    particleSystem.minSize = 1;
-    particleSystem.maxSize = 10;
+    particleSystem.minSize = 0.2;
+    particleSystem.maxSize = 1;
 
     // console.log(particleSystem)
 
@@ -217,7 +448,7 @@ function setBooms(position){
     particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
 
 
-    particleSystem.direction1 = new BABYLON.Vector3(0, -1, 0);
+    particleSystem.direction1 = new BABYLON.Vector3(0, -0.4, 0);
     // particleSystem2.direction2 = new BABYLON.Vector3(0, 100, 0);
 
 
@@ -225,7 +456,7 @@ function setBooms(position){
     // Speed
     particleSystem.minEmitPower = 1;
     particleSystem.maxEmitPower = 1;
-    particleSystem.updateSpeed = 0.1;
+    particleSystem.updateSpeed = 100;
 
 
     particleSystem.stop();
@@ -269,8 +500,8 @@ function Xues(position){
     particleSystem.color2 = new BABYLON.Color4(.8, 0, 0 ,1.0);
     particleSystem.colorDead = new BABYLON.Color4(.8, 0, 0 ,0);
 
-    particleSystem.minSize = 1;
-    particleSystem.maxSize = 10;
+    particleSystem.minSize = .2;
+    particleSystem.maxSize = 1;
 
     // console.log(particleSystem)
 
@@ -284,7 +515,7 @@ function Xues(position){
     particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
 
 
-    particleSystem.direction1 = new BABYLON.Vector3(1, 3, 1);
+    particleSystem.direction1 = new BABYLON.Vector3(0.2, 0.3, 0.2);
     // particleSystem2.direction2 = new BABYLON.Vector3(0, 100, 0);
 
 
@@ -292,7 +523,7 @@ function Xues(position){
     // Speed
     particleSystem.minEmitPower = 1;
     particleSystem.maxEmitPower = 1;
-    particleSystem.updateSpeed = 0.1;
+    particleSystem.updateSpeed = 100;
 
 
     particleSystem.stop();
