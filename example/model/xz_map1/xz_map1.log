@@ -1,0 +1,1344 @@
+	Exporter version: 4.6.1, Blender version: 2.78 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used:
+		selected layers only:  false
+		flat shading entire scene:  false
+		inline textures:  false
+		texture directory:  E:\模型\babylon\xz_map1\
+	Python World class constructor completed
+	processing begun of mesh:  Navmesh
+		WARNING: No materials have been assigned: 
+		num positions      :  3589
+		num normals        :  3589
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  13164
+	processing begun of mesh:  BSP_Object_model_128
+		processing begun of Standard material:  texture_55
+			Diffuse texture found "贴图 #71"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_65
+			Diffuse texture found "贴图 #81"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#0
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_127
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#1
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_126
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#2
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_125
+		processing begun of Standard material:  texture_83
+			Diffuse texture found "贴图 #99"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_0
+			Diffuse texture found "贴图 #16"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#3
+		num positions      :  104
+		num normals        :  104
+		num uvs            :  208
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  180
+	processing begun of mesh:  BSP_Object_model_124
+		processing begun of Standard material:  texture_58
+			Diffuse texture found "贴图 #74"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_59
+			Diffuse texture found "贴图 #75"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#4
+		num positions      :  132
+		num normals        :  132
+		num uvs            :  264
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  228
+	processing begun of mesh:  BSP_Object_model_123
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#5
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_122
+		processing begun of Standard material:  texture_84
+			Diffuse texture found "贴图 #100"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_52
+			Diffuse texture found "贴图 #68"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#6
+		num positions      :  88
+		num normals        :  88
+		num uvs            :  176
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_121
+		registered as also a user of material:  texture_83
+		registered as also a user of material:  texture_0
+		processing begun of multimaterial:  xz_map1.Multimaterial#7
+		num positions      :  100
+		num normals        :  100
+		num uvs            :  200
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  180
+	processing begun of mesh:  BSP_Object_model_120
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#8
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_119
+		processing begun of Standard material:  texture_82
+			Diffuse texture found "贴图 #98"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  268
+		num normals        :  268
+		num uvs            :  536
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  468
+	processing begun of mesh:  BSP_Object_model_118
+		registered as also a user of material:  texture_82
+		num positions      :  268
+		num normals        :  268
+		num uvs            :  536
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  468
+	processing begun of mesh:  BSP_Object_model_117
+		processing begun of Standard material:  texture_69
+			Diffuse texture found "贴图 #85"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_70
+			Diffuse texture found "贴图 #86"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#9
+		num positions      :  108
+		num normals        :  108
+		num uvs            :  216
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  192
+	processing begun of mesh:  BSP_Object_model_116
+		registered as also a user of material:  texture_55
+		processing begun of Standard material:  texture_81
+			Diffuse texture found "贴图 #97"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#10
+		num positions      :  54
+		num normals        :  54
+		num uvs            :  108
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  96
+	processing begun of mesh:  BSP_Object_model_115
+		processing begun of Standard material:  texture_80
+			Diffuse texture found "贴图 #96"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_114
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_113
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_112
+		registered as also a user of material:  texture_55
+		processing begun of Standard material:  texture_79
+			Diffuse texture found "贴图 #95"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#11
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_111
+		processing begun of Standard material:  texture_22
+			Diffuse texture found "贴图 #38"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_4
+			Diffuse texture found "贴图 #20"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#12
+		num positions      :  44
+		num normals        :  44
+		num uvs            :  88
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_110
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#13
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_109
+		registered as also a user of material:  texture_55
+		processing begun of Standard material:  texture_78
+			Diffuse texture found "贴图 #94"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#14
+		num positions      :  60
+		num normals        :  60
+		num uvs            :  120
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  108
+	processing begun of mesh:  BSP_Object_model_108
+		processing begun of Standard material:  texture_34
+			Diffuse texture found "贴图 #50"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_107
+		registered as also a user of material:  texture_34
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_106
+		registered as also a user of material:  texture_34
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_105
+		registered as also a user of material:  texture_34
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_104
+		registered as also a user of material:  texture_34
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_103
+		registered as also a user of material:  texture_34
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_102
+		registered as also a user of material:  texture_0
+		num positions      :  44
+		num normals        :  44
+		num uvs            :  88
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_101
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#15
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_100
+		processing begun of Standard material:  texture_37
+			Diffuse texture found "贴图 #53"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_99
+		processing begun of Standard material:  texture_77
+			Diffuse texture found "贴图 #93"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_98
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#16
+		num positions      :  64
+		num normals        :  64
+		num uvs            :  128
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  96
+	processing begun of mesh:  BSP_Object_model_97
+		registered as also a user of material:  texture_0
+		processing begun of Standard material:  texture_76
+			Diffuse texture found "贴图 #92"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#17
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_96
+		processing begun of Standard material:  texture_66
+			Diffuse texture found "贴图 #82"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  102
+		num normals        :  102
+		num uvs            :  204
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  168
+	processing begun of mesh:  BSP_Object_model_95
+		registered as also a user of material:  texture_0
+		processing begun of Standard material:  texture_1
+			Diffuse texture found "贴图 #17"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_4
+		processing begun of Standard material:  texture_54
+			Diffuse texture found "贴图 #70"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#18
+		num positions      :  100
+		num normals        :  100
+		num uvs            :  200
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  168
+	processing begun of mesh:  BSP_Object_model_94
+		registered as also a user of material:  texture_55
+		processing begun of Standard material:  texture_62
+			Diffuse texture found "贴图 #78"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_63
+			Diffuse texture found "贴图 #79"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_64
+			Diffuse texture found "贴图 #80"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#19
+		num positions      :  64
+		num normals        :  64
+		num uvs            :  128
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  108
+	processing begun of mesh:  BSP_Object_model_93
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_62
+		registered as also a user of material:  texture_63
+		registered as also a user of material:  texture_64
+		processing begun of multimaterial:  xz_map1.Multimaterial#20
+		num positions      :  64
+		num normals        :  64
+		num uvs            :  128
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  108
+	processing begun of mesh:  BSP_Object_model_92
+		registered as also a user of material:  texture_37
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_91
+		registered as also a user of material:  texture_37
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_90
+		processing begun of Standard material:  texture_42
+			Diffuse texture found "贴图 #58"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_44
+			Diffuse texture found "贴图 #60"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#21
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_89
+		registered as also a user of material:  texture_37
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_88
+		registered as also a user of material:  texture_37
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_87
+		processing begun of Standard material:  texture_74
+			Diffuse texture found "贴图 #90"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_75
+			Diffuse texture found "贴图 #91"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#22
+		num positions      :  90
+		num normals        :  90
+		num uvs            :  180
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  168
+	processing begun of mesh:  BSP_Object_model_86
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#23
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_85
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#24
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_84
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#25
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_83
+		processing begun of Standard material:  texture_73
+			Diffuse texture found "贴图 #89"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  44
+		num normals        :  44
+		num uvs            :  88
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_80
+		registered as also a user of material:  texture_1
+		registered as also a user of material:  texture_4
+		processing begun of Standard material:  texture_7
+			Diffuse texture found "贴图 #23"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_0
+		registered as also a user of material:  texture_37
+		processing begun of multimaterial:  xz_map1.Multimaterial#26
+		num positions      :  133
+		num normals        :  133
+		num uvs            :  266
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  231
+	processing begun of mesh:  BSP_Object_model_79
+		processing begun of Standard material:  texture_10
+			Diffuse texture found "贴图 #26"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_0
+		processing begun of multimaterial:  xz_map1.Multimaterial#27
+		num positions      :  18
+		num normals        :  18
+		num uvs            :  36
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  BSP_Object_model_78
+		registered as also a user of material:  texture_0
+		registered as also a user of material:  texture_10
+		processing begun of multimaterial:  xz_map1.Multimaterial#28
+		num positions      :  42
+		num normals        :  42
+		num uvs            :  84
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_77
+		registered as also a user of material:  texture_55
+		processing begun of Standard material:  texture_72
+			Diffuse texture found "贴图 #88"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#29
+		num positions      :  56
+		num normals        :  56
+		num uvs            :  112
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  96
+	processing begun of mesh:  BSP_Object_model_76
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#30
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_75
+		registered as also a user of material:  texture_52
+		processing begun of Standard material:  texture_3
+			Diffuse texture found "贴图 #19"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#31
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_74
+		registered as also a user of material:  texture_52
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_73
+		registered as also a user of material:  texture_3
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_72
+		registered as also a user of material:  texture_3
+		num positions      :  72
+		num normals        :  72
+		num uvs            :  144
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  132
+	processing begun of mesh:  BSP_Object_model_71
+		registered as also a user of material:  texture_3
+		num positions      :  64
+		num normals        :  64
+		num uvs            :  128
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  108
+	processing begun of mesh:  BSP_Object_model_70
+		registered as also a user of material:  texture_3
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_69
+		registered as also a user of material:  texture_3
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_67
+		registered as also a user of material:  texture_69
+		registered as also a user of material:  texture_70
+		processing begun of Standard material:  texture_71
+			Diffuse texture found "贴图 #87"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#32
+		num positions      :  216
+		num normals        :  216
+		num uvs            :  432
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  372
+	processing begun of mesh:  BSP_Object_model_66
+		registered as also a user of material:  texture_0
+		registered as also a user of material:  texture_1
+		processing begun of multimaterial:  xz_map1.Multimaterial#33
+		num positions      :  166
+		num normals        :  166
+		num uvs            :  332
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  282
+	processing begun of mesh:  BSP_Object_model_65
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_64
+		registered as also a user of material:  texture_55
+		processing begun of Standard material:  texture_68
+			Diffuse texture found "贴图 #84"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#34
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_63
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_62
+		registered as also a user of material:  texture_0
+		processing begun of Standard material:  texture_67
+			Diffuse texture found "贴图 #83"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_9
+			Diffuse texture found "贴图 #25"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#35
+		num positions      :  64
+		num normals        :  64
+		num uvs            :  128
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  108
+	processing begun of mesh:  BSP_Object_model_61
+		registered as also a user of material:  texture_0
+		registered as also a user of material:  texture_67
+		registered as also a user of material:  texture_9
+		processing begun of multimaterial:  xz_map1.Multimaterial#36
+		num positions      :  72
+		num normals        :  72
+		num uvs            :  144
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  132
+	processing begun of mesh:  BSP_Object_model_60
+		registered as also a user of material:  texture_0
+		registered as also a user of material:  texture_67
+		registered as also a user of material:  texture_9
+		processing begun of multimaterial:  xz_map1.Multimaterial#37
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  80
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  60
+	processing begun of mesh:  BSP_Object_model_59
+		registered as also a user of material:  texture_0
+		registered as also a user of material:  texture_9
+		processing begun of multimaterial:  xz_map1.Multimaterial#38
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  80
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  60
+	processing begun of mesh:  BSP_Object_model_58
+		registered as also a user of material:  texture_0
+		num positions      :  60
+		num normals        :  60
+		num uvs            :  120
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  96
+	processing begun of mesh:  BSP_Object_model_57
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_56
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_55
+		registered as also a user of material:  texture_44
+		registered as also a user of material:  texture_42
+		processing begun of multimaterial:  xz_map1.Multimaterial#39
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_54
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_53
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_52
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_51
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_50
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_49
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_48
+		registered as also a user of material:  texture_66
+		num positions      :  72
+		num normals        :  72
+		num uvs            :  144
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  120
+	processing begun of mesh:  BSP_Object_model_47
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#40
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_46
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_65
+		processing begun of multimaterial:  xz_map1.Multimaterial#41
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_44
+		registered as also a user of material:  texture_55
+		registered as also a user of material:  texture_62
+		registered as also a user of material:  texture_63
+		registered as also a user of material:  texture_64
+		processing begun of multimaterial:  xz_map1.Multimaterial#42
+		num positions      :  64
+		num normals        :  64
+		num uvs            :  128
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  108
+	processing begun of mesh:  BSP_Object_model_43
+		processing begun of Standard material:  texture_61
+			Diffuse texture found "贴图 #77"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  48
+		num normals        :  48
+		num uvs            :  96
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_42
+		registered as also a user of material:  texture_61
+		num positions      :  240
+		num normals        :  240
+		num uvs            :  480
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  384
+	processing begun of mesh:  BSP_Object_model_41
+		registered as also a user of material:  texture_61
+		num positions      :  96
+		num normals        :  96
+		num uvs            :  192
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  168
+	processing begun of mesh:  BSP_Object_model_40
+		registered as also a user of material:  texture_61
+		num positions      :  80
+		num normals        :  80
+		num uvs            :  160
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  120
+	processing begun of mesh:  BSP_Object_model_39
+		registered as also a user of material:  texture_61
+		num positions      :  336
+		num normals        :  336
+		num uvs            :  672
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  648
+	processing begun of mesh:  BSP_Object_model_38
+		registered as also a user of material:  texture_61
+		num positions      :  96
+		num normals        :  96
+		num uvs            :  192
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  168
+	processing begun of mesh:  BSP_Object_model_37
+		registered as also a user of material:  texture_61
+		num positions      :  48
+		num normals        :  48
+		num uvs            :  96
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_36
+		registered as also a user of material:  texture_61
+		num positions      :  288
+		num normals        :  288
+		num uvs            :  576
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  456
+	processing begun of mesh:  BSP_Object_model_35
+		registered as also a user of material:  texture_61
+		num positions      :  48
+		num normals        :  48
+		num uvs            :  96
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_34
+		registered as also a user of material:  texture_61
+		num positions      :  48
+		num normals        :  48
+		num uvs            :  96
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_33
+		registered as also a user of material:  texture_61
+		num positions      :  48
+		num normals        :  48
+		num uvs            :  96
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_32
+		processing begun of Standard material:  texture_60
+			Diffuse texture found "贴图 #76"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  54
+		num normals        :  54
+		num uvs            :  108
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  96
+	processing begun of mesh:  BSP_Object_model_31
+		registered as also a user of material:  texture_60
+		num positions      :  54
+		num normals        :  54
+		num uvs            :  108
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  96
+	processing begun of mesh:  BSP_Object_model_30
+		registered as also a user of material:  texture_58
+		registered as also a user of material:  texture_59
+		processing begun of multimaterial:  xz_map1.Multimaterial#43
+		num positions      :  136
+		num normals        :  136
+		num uvs            :  272
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  204
+	processing begun of mesh:  BSP_Object_model_29
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_28
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_27
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_26
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_25
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_24
+		registered as also a user of material:  texture_0
+		num positions      :  26
+		num normals        :  26
+		num uvs            :  52
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_23
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_22
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_21
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_20
+		processing begun of Standard material:  texture_28
+			Diffuse texture found "贴图 #44"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  48
+		num normals        :  48
+		num uvs            :  96
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_19
+		registered as also a user of material:  texture_28
+		num positions      :  56
+		num normals        :  56
+		num uvs            :  112
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  96
+	processing begun of mesh:  BSP_Object_model_18
+		registered as also a user of material:  texture_28
+		num positions      :  44
+		num normals        :  44
+		num uvs            :  88
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_17
+		registered as also a user of material:  texture_28
+		num positions      :  42
+		num normals        :  42
+		num uvs            :  84
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  BSP_Object_model_16
+		registered as also a user of material:  texture_28
+		num positions      :  52
+		num normals        :  52
+		num uvs            :  104
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  90
+	processing begun of mesh:  BSP_Object_model_15
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_14
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_13
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_12
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_11
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_10
+		processing begun of Standard material:  texture_47
+			Diffuse texture found "贴图 #63"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_9
+		processing begun of Standard material:  texture_57
+			Diffuse texture found "贴图 #73"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_7
+		registered as also a user of material:  texture_55
+		processing begun of Standard material:  texture_56
+			Diffuse texture found "贴图 #72"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of multimaterial:  xz_map1.Multimaterial#44
+		num positions      :  264
+		num normals        :  264
+		num uvs            :  528
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  396
+	processing begun of mesh:  BSP_Object_model_6
+		registered as also a user of material:  texture_4
+		num positions      :  288
+		num normals        :  288
+		num uvs            :  576
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  432
+	processing begun of mesh:  BSP_Object_model_5
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_4
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_3
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_2
+		registered as also a user of material:  texture_0
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  48
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  BSP_Object_model_1
+		registered as also a user of material:  texture_4
+		num positions      :  90
+		num normals        :  90
+		num uvs            :  180
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  BSP_Object_model_0
+		registered as also a user of material:  texture_0
+		registered as also a user of material:  texture_1
+		processing begun of Standard material:  texture_2
+			Diffuse texture found "贴图 #18"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_3
+		registered as also a user of material:  texture_4
+		processing begun of Standard material:  texture_5
+			Diffuse texture found "贴图 #21"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_6
+			Diffuse texture found "贴图 #22"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_7
+		processing begun of Standard material:  texture_8
+			Diffuse texture found "贴图 #24"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_9
+		registered as also a user of material:  texture_10
+		processing begun of Standard material:  texture_11
+			Diffuse texture found "贴图 #27"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_12
+			Diffuse texture found "贴图 #28"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_13
+			Diffuse texture found "贴图 #29"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_14
+			Diffuse texture found "贴图 #30"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_15
+			Diffuse texture found "贴图 #31"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_16
+			Diffuse texture found "贴图 #32"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_17
+			Diffuse texture found "贴图 #33"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_18
+			Diffuse texture found "贴图 #34"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_19
+			Diffuse texture found "贴图 #35"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_20
+			Diffuse texture found "贴图 #36"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_21
+			Diffuse texture found "贴图 #37"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_22
+		processing begun of Standard material:  texture_23
+			Diffuse texture found "贴图 #39"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_24
+			Diffuse texture found "贴图 #40"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_25
+			Diffuse texture found "贴图 #41"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_26
+			Diffuse texture found "贴图 #42"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_27
+			Diffuse texture found "贴图 #43"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_28
+		processing begun of Standard material:  texture_29
+			Diffuse texture found "贴图 #45"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_30
+			Diffuse texture found "贴图 #46"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_31
+			Diffuse texture found "贴图 #47"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_32
+			Diffuse texture found "贴图 #48"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_33
+			Diffuse texture found "贴图 #49"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_34
+		processing begun of Standard material:  texture_35
+			Diffuse texture found "贴图 #51"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_36
+			Diffuse texture found "贴图 #52"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_37
+		processing begun of Standard material:  texture_38
+			Diffuse texture found "贴图 #54"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_39
+			Diffuse texture found "贴图 #55"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_40
+			Diffuse texture found "贴图 #56"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_41
+			Diffuse texture found "贴图 #57"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_42
+		processing begun of Standard material:  texture_43
+			Diffuse texture found "贴图 #59"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_44
+		processing begun of Standard material:  texture_45
+			Diffuse texture found "贴图 #61"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_46
+			Diffuse texture found "贴图 #62"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_47
+		processing begun of Standard material:  texture_48
+			Diffuse texture found "贴图 #64"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_49
+			Diffuse texture found "贴图 #65"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_50
+			Diffuse texture found "贴图 #66"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		processing begun of Standard material:  texture_51
+			Diffuse texture found "贴图 #67"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_52
+		processing begun of Standard material:  texture_53
+			Diffuse texture found "贴图 #69"
+				Image texture found, type:  diffuseTexture, mapped using: "UVChannel_1"
+		registered as also a user of material:  texture_54
+		processing begun of multimaterial:  xz_map1.Multimaterial#45
+		num positions      :  17215
+		num normals        :  17215
+		num uvs            :  34430
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  30237
+	processing begun of camera (FreeCamera):  Camera
+	processing begun of light (POINT):  Lamp
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 1.5794 secs

@@ -1,6 +1,9 @@
 /**
  * Created by Administrator on 2017/8/12.
  */
+
+var countLoad=0
+
 function lookAt(tM, lAt) {
     lAt = lAt.subtract(tM.position);
     tM.rotation.y = -Math.atan2(lAt.z, lAt.x) - Math.PI/2;
@@ -20,6 +23,7 @@ function loadMeshes(models,sccuess){
     models.forEach(function (model,i){
         BABYLON.SceneLoader.ImportMesh("", model.fileSrc, model.fileName, scene, function(newMeshes,particleSystems,skeletons) {
 
+            countLoad++
 
             fps_D[i] = BABYLON.Mesh.CreateBox("crate", 2, scene);
             console.log(particleSystems)
@@ -233,33 +237,33 @@ function keyevent(){
              camera.getViewMatrix().invertToRef(camera._cameraTransformMatrix);
              BABYLON.Vector3.TransformNormalToRef(camera._localDirection,camera._cameraTransformMatrix,camera._transformedDirection);
              camera.cameraDirection.addInPlace(camera._transformedDirection);*/
-            scene.gravity = new BABYLON.Vector3(0, 0.6, 0);
+            scene.gravity = new BABYLON.Vector3(0, 0.4, 0);
 
             setTimeout(function(){
-                scene.gravity = new BABYLON.Vector3(0, -0.3, 0);
+                scene.gravity = new BABYLON.Vector3(0, -0.2, 0);
             },100)
 
             jumpState=1
             setTimeout(function(){
-                scene.gravity = new BABYLON.Vector3(0, -3, 0);
+                scene.gravity = new BABYLON.Vector3(0, -0.2, 0);
                 jumpState=0
             },500)
         }
 
-    }else if(event.keyCode==16){
-        camera.ellipsoid = new BABYLON.Vector3(2, 3, 2);
-        camera.speed=3
-    }
+    }/*else if(event.keyCode==16){
+        camera.ellipsoid.y=camera.ellipsoid.y/2;
+        camera.speed=camera.speed/2
+    }*/
 
 
 }
 
 function keyevent2(){
-    if(event.keyCode==16){
-        camera.position.y+=6;
-        camera.ellipsoid = new BABYLON.Vector3(2, 6, 2);
-        camera.speed=12
-    }
+    /*if(event.keyCode==16){
+        camera.position.y+=camera.ellipsoid.y*2;
+        camera.ellipsoid.y=camera.ellipsoid.y*2;
+        camera.speed=camera.speed*2
+    }*/
 }
 
 //枪得状态

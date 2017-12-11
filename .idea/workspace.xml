@@ -1,133 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14b9ff77-3353-45ee-93d5-4e090bccca9a" name="Default" comment="add">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/Binary/fps_q1_1.smdimport.fd6f1ab0-ffbd-451c-ba24-eea0a7fa47b5.babylonbinarymeshdata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_1.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_2.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_3.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_4.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_5.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_6.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_7.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_8.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/GIGN_HAND_HD_9.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_1.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_10.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_2.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_3.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_4.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_5.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_6.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_7.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_8.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/MG3AA_HD_9.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q2_1/Binary/fps_q2_1.smdimport.29d94ae3-806b-45dd-9300-b74703be79e3.babylonbinarymeshdata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q2_1/SA1911.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q2_1/long512.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q2_1/long512f.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q3_2/#Be_male_long.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q3_2/Binary/fps_q3_2.smdimport.a6a75e1a-ffb9-4086-b845-8bdb2f39217a.babylonbinarymeshdata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q3_2/katana_energetic_d.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q3_2/katana_energetic_gradient_d.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_16.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_17.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_18.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_19.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_20.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_21.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_22.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_23.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_24.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_25.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_26.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_27.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_28.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_29.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_30.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_31.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_32.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_33.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_34.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_35.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_36.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_38.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_39.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_40.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_41.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_42.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_43.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_44.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_45.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejimap_texture_9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/npc_njs2/TR-W-Bandage.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/npc_njs2/npc_njs2.smdimport.42e278e6-1118-4d4e-96df-5e1e8b286bde.babylonbinarymeshdata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/npc_njs2/匕首.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/music/bgmkb.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/music/gameover.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/music/nv_npc_jiao.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/music/nv_npc_jiao2.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Babylon/babylon-navigation-mesh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/index3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/Binary/fps_q1_1.binary.babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/fps_q1_1.babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q2_1/Binary/fps_q2_1.binary.babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q2_1/fps_q2_1.babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q3_2/Binary/fps_q3_2.binary.babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/fps_q3_2/fps_q3_2.babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejinavmap2.babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/kejinavmap2/kejinavmap2.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/npc_njs2/npc_njs2.babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/npc_njs2/npc_njs2.binary.babylon" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/NPC/NPC.babylon" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/NPC/NPC.fbm/169aba19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/NPC/NPC.fbm/3b6c645d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/NPC/NPC.fbm/575d1bef.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/NPC/NPC.fbm/8c6f6e56.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/NPC/NPC.fbm/91bb8e40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/NPC/NPC.fbm/c4e48af6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/map1/BarrelRed_d.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/map1/Container3_s.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/map1/Ground_s.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/map1/PopcornCar_s.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/map1/Wheel_s.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/map1/WhiteBrick_s.tga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/map1/map20.babylon" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang2/M16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang2/hand.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang2/qiang2.babylon" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang2/qiang2.binary.babylon" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang2/qiang2.hand.1ea0aafd-8f1a-4d57-bd34-3542b5a7baed.babylonbinarymeshdata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang2/qiang2.m16.7270915d-8281-4797-a173-3a06ef9a6418.babylonbinarymeshdata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang3/M9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang3/hand.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang3/qiang3.babylon" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang3/qiang3.binary.babylon" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang3/qiang3.hand_2.66b54ec6-cd3b-47ba-96b6-e09c26c35dc9.babylonbinarymeshdata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/model/qiang3/qiang3.m9.0c00c3cf-2490-4da7-b8c2-28ba5216ba10.babylonbinarymeshdata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example/test.html" afterPath="" />
+    <list default="true" id="14b9ff77-3353-45ee-93d5-4e090bccca9a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_11.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_13.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_16.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_18.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_19.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_20.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_23.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_24.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_25.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_26.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_29.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_31.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_32.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_33.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_34.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_35.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_36.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_37.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_38.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_39.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_40.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_41.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_42.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_43.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_44.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_45.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_47.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_48.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_49.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_51.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_52.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_53.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_54.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_55.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_56.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_57.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_58.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_59.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_60.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_61.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_62.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_63.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_64.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_65.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_66.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_67.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_68.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_69.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_70.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_71.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_72.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_73.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_74.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_75.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_76.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_77.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_78.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_79.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_80.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_81.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_82.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_83.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_84.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/map_texture_9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Babylon/jquery-1.11.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/xz_map1.babylon" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/xz_map1.babylon.manifest" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/model/xz_map1/xz_map1.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/index.html" afterPath="$PROJECT_DIR$/example/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/main.js" afterPath="$PROJECT_DIR$/example/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/model/NPC/NPC.babylon.manifest" afterPath="$PROJECT_DIR$/example/model/fps_q1_1/fps_q1_1.babylon.manifest" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/model/map1/map20.babylon.manifest" afterPath="$PROJECT_DIR$/example/model/fps_q2_1/fps_q2_1.babylon.manifest" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/model/qiang2/qiang2.babylon.manifest" afterPath="$PROJECT_DIR$/example/model/fps_q3_2/fps_q3_2.babylon.manifest" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/model/qiang3/qiang3.babylon.manifest" afterPath="$PROJECT_DIR$/example/model/npc_njs2/npc_njs2.babylon.manifest" />
     </list>
     <ignored path="fps.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -151,19 +117,19 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="511" column="0" lean-forward="true" selection-start-line="511" selection-start-column="0" selection-end-line="511" selection-end-column="0" />
-              <folding>
-                <element signature="e#11033#14192#0" expanded="false" />
-                <element signature="e#12443#12772#0" expanded="false" />
-                <element signature="e#12815#13181#0" expanded="false" />
-                <element signature="e#12915#13040#0" expanded="false" />
-                <element signature="e#13223#14099#0" expanded="false" />
-                <element signature="e#13277#13813#0" expanded="false" />
-                <element signature="e#13640#13775#0" expanded="false" />
-                <element signature="e#14354#15324#0" expanded="false" />
-                <element signature="e#15381#15634#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="277" column="0" lean-forward="true" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/index3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3325">
+              <caret line="175" column="28" lean-forward="false" selection-start-line="166" selection-start-column="7" selection-end-line="175" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,17 +144,10 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4674">
-              <caret line="312" column="0" lean-forward="true" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+            <state relative-caret-position="475">
+              <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="23" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ico_star.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/ico_star.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -238,15 +197,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.tga</find>
-      <find>.bmp</find>
-      <find>#Be_male_long</find>
-      <find>#Be_female_long</find>
-      <find>tga</find>
-      <find>loadMeshes</find>
-      <find>setQiangState</find>
-      <find>keyevent</find>
-      <find>qiangState</find>
       <find>light0</find>
       <find>isLocked</find>
       <find>light</find>
@@ -264,10 +214,19 @@
       <find>fun</find>
       <find>npcmove</find>
       <find>vis</find>
-      <find>box7</find>
       <find>con</find>
       <find>console</find>
       <find>ImportMesh</find>
+      <find>box7.s</find>
+      <find>box7</find>
+      <find>hit</find>
+      <find>npc_zou</find>
+      <find>npc_pao</find>
+      <find>look</find>
+      <find>sky</find>
+      <find>loading</find>
+      <find>camera</find>
+      <find>pointerlockchange</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -285,11 +244,11 @@
         <option value="$PROJECT_DIR$/example/model/map1/map16.babylon" />
         <option value="$PROJECT_DIR$/example/test.html" />
         <option value="$PROJECT_DIR$/example/model/fps_q3/fps_q3.babylon" />
-        <option value="$PROJECT_DIR$/example/index.html" />
         <option value="$PROJECT_DIR$/Babylon/babylon-navigation-mesh-master/babylon-navigation-mesh-master/index.html" />
         <option value="$PROJECT_DIR$/Babylon/babylon-navigation-mesh-master/babylon-navigation-mesh-master/demo/demo.js" />
-        <option value="$PROJECT_DIR$/example/main.js" />
         <option value="$PROJECT_DIR$/example/index2.html" />
+        <option value="$PROJECT_DIR$/example/main.js" />
+        <option value="$PROJECT_DIR$/example/index.html" />
       </list>
     </option>
   </component>
@@ -300,10 +259,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="32" />
-    <option name="y" value="6" />
-    <option name="width" value="1370" />
-    <option name="height" value="745" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1378" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -320,8 +279,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,15 +286,12 @@
               <item name="fps" type="b2602c69:ProjectViewProjectNode" />
               <item name="fps" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="fps" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fps" type="462c0819:PsiDirectoryNode" />
-              <item name="Babylon" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -352,11 +306,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\网页作品\fps\example\music" />
-      <recent name="E:\网页作品\fps\example\model" />
-      <recent name="E:\网页作品\fps\example\model\kejinavmap2" />
-      <recent name="E:\网页作品\fps\Babylon\babylon-navigation-mesh-master\babylon-navigation-mesh-master" />
       <recent name="E:\网页作品\fps\Babylon" />
+      <recent name="E:\网页作品\fps\example\model\xz_map1" />
+      <recent name="E:\网页作品\fps\example\model" />
+      <recent name="E:\网页作品\fps\example\music" />
+      <recent name="E:\网页作品\fps\example\model\kejinavmap2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -841,7 +795,12 @@
       <workItem from="1512216299748" duration="13484000" />
       <workItem from="1512391992873" duration="595000" />
       <workItem from="1512396829823" duration="3479000" />
-      <workItem from="1512479777290" duration="6356000" />
+      <workItem from="1512479777290" duration="7845000" />
+      <workItem from="1512818073253" duration="896000" />
+      <workItem from="1512832219719" duration="4146000" />
+      <workItem from="1512873186070" duration="19024000" />
+      <workItem from="1512912773457" duration="6286000" />
+      <workItem from="1512993569149" duration="2467000" />
     </task>
     <task id="LOCAL-00001" summary="add VolumetricLight">
       <created>1502634927063</created>
@@ -885,11 +844,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508416258195</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add">
+      <created>1512486272563</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1512486272563</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200650000" />
+    <option name="totallyTimeSpent" value="234958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -897,12 +863,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29648608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05625" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -934,6 +900,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="add VolumetricLight" />
     <MESSAGE value="add FreeLight" />
     <MESSAGE value="add map  lights" />
@@ -1070,128 +1037,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/8c6f6e56.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/91bb8e40.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/169aba19.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/575d1bef.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/c4e48af6.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.babylon">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/3b6c645d.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_7.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_9.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_12.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/8c6f6e56.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/91bb8e40.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/169aba19.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/575d1bef.png" />
+    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/c4e48af6.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.babylon" />
+    <entry file="file://$PROJECT_DIR$/example/model/NPC/NPC.fbm/3b6c645d.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_7.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_9.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_12.jpg" />
     <entry file="file://$PROJECT_DIR$/example/nodejs-master/gamesocket/test2.html" />
     <entry file="file://$PROJECT_DIR$/example/nodejs-master/gamesocket/index.js" />
     <entry file="file://$PROJECT_DIR$/example/nodejs-master/gamesocket/test.html" />
-    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_15.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/fps_q3/fps_q3.babylon.manifest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/fps_q3/katana_energetic_gradient_d.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/fps_q3/fps_q3.babylon">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="0" column="1955836" lean-forward="true" selection-start-line="0" selection-start-column="1955836" selection-end-line="0" selection-end-column="1955836" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_10.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1748">
-          <caret line="92" column="16" lean-forward="false" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Babylon/babylon-navigation-mesh-master/babylon-navigation-mesh-master/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/index3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5605">
-          <caret line="295" column="56" lean-forward="false" selection-start-line="295" selection-start-column="7" selection-end-line="295" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Babylon/babylon-navigation-mesh-master/babylon-navigation-mesh-master/demo/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2147">
-          <caret line="113" column="32" lean-forward="false" selection-start-line="110" selection-start-column="7" selection-end-line="113" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/model/fps_q3/katana_energetic_d.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_15.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/model/fps_q3/fps_q3.babylon.manifest" />
+    <entry file="file://$PROJECT_DIR$/example/model/fps_q3/katana_energetic_gradient_d.bmp" />
+    <entry file="file://$PROJECT_DIR$/example/model/fps_q3/fps_q3.babylon" />
+    <entry file="file://$PROJECT_DIR$/example/model/map52/map50_material_10.jpg" />
+    <entry file="file://$PROJECT_DIR$/example/test.html" />
+    <entry file="file://$PROJECT_DIR$/Babylon/babylon-navigation-mesh-master/babylon-navigation-mesh-master/index.html" />
+    <entry file="file://$PROJECT_DIR$/Babylon/babylon-navigation-mesh-master/babylon-navigation-mesh-master/demo/demo.js" />
+    <entry file="file://$PROJECT_DIR$/example/model/fps_q3/katana_energetic_d.bmp" />
     <entry file="file://$PROJECT_DIR$/images/ico_star.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1232,29 +1100,27 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/index3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3325">
+          <caret line="175" column="28" lean-forward="false" selection-start-line="166" selection-start-column="7" selection-end-line="175" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4674">
-          <caret line="312" column="0" lean-forward="true" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+        <state relative-caret-position="475">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="511" column="0" lean-forward="true" selection-start-line="511" selection-start-column="0" selection-end-line="511" selection-end-column="0" />
-          <folding>
-            <element signature="e#11033#14192#0" expanded="false" />
-            <element signature="e#12443#12772#0" expanded="false" />
-            <element signature="e#12815#13181#0" expanded="false" />
-            <element signature="e#12915#13040#0" expanded="false" />
-            <element signature="e#13223#14099#0" expanded="false" />
-            <element signature="e#13277#13813#0" expanded="false" />
-            <element signature="e#13640#13775#0" expanded="false" />
-            <element signature="e#14354#15324#0" expanded="false" />
-            <element signature="e#15381#15634#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="277" column="0" lean-forward="true" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
